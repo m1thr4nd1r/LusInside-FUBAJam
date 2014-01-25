@@ -204,12 +204,11 @@
                         </action>
                     </actions>
                 </event-block>
-                <event-block sid="9912525598579448">
+                <event-block collapsed="1" sid="9912525598579448">
                     <conditions>
                         <condition id="4" name="On finished" sid="3288368350623419" type="Actor">
                             <param id="0" name="Animation">&quot;Attacking&quot;</param>
                         </condition>
-                        <condition id="7" inverted="1" name="Is mirrored" sid="56388539372176" type="Actor" />
                     </conditions>
                     <actions>
                         <action id="0" name="Spawn another object" sid="6819412778166719" type="Actor">
@@ -217,28 +216,30 @@
                             <param id="1" name="Layer">1</param>
                             <param id="2" name="Image point">1</param>
                         </action>
-                        <action behavior="Bullet" id="3" name="Set angle of motion" sid="2324976919442946" type="Shoot">
-                            <param id="0" name="Angle">180</param>
-                        </action>
                     </actions>
-                </event-block>
-                <event-block sid="7350435642892457">
-                    <conditions>
-                        <condition id="4" name="On finished" sid="4101212398288994" type="Actor">
-                            <param id="0" name="Animation">&quot;Attacking&quot;</param>
-                        </condition>
-                        <condition id="7" name="Is mirrored" sid="3100209946281003" type="Actor" />
-                    </conditions>
-                    <actions>
-                        <action id="0" name="Spawn another object" sid="6012668646511871" type="Actor">
-                            <param id="0" name="Object">Shoot</param>
-                            <param id="1" name="Layer">1</param>
-                            <param id="2" name="Image point">1</param>
-                        </action>
-                        <action behavior="Bullet" id="3" name="Set angle of motion" sid="2755130019737691" type="Shoot">
-                            <param id="0" name="Angle">0</param>
-                        </action>
-                    </actions>
+                    <sub-events>
+                        <event-block sid="6889316715680777">
+                            <conditions>
+                                <condition id="7" inverted="1" name="Is mirrored" sid="56388539372176" type="Actor" />
+                            </conditions>
+                            <actions>
+                                <action behavior="Bullet" id="3" name="Set angle of motion" sid="2324976919442946" type="Shoot">
+                                    <param id="0" name="Angle">180</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="33524962992572">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="1480529738571875" type="System" />
+                                <condition id="7" name="Is mirrored" sid="3100209946281003" type="Actor" />
+                            </conditions>
+                            <actions>
+                                <action behavior="Bullet" id="3" name="Set angle of motion" sid="2755130019737691" type="Shoot">
+                                    <param id="0" name="Angle">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
                 </event-block>
                 <event-block sid="6773239338776027">
                     <conditions>
@@ -271,20 +272,20 @@
                         </action>
                     </actions>
                 </event-block>
+                <event-block sid="278162448586546">
+                    <conditions>
+                        <condition id="3" name="On key released" sid="4753499436279622" type="Keyboard">
+                            <param id="0" name="Key">67 (C)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="5369209316571019" type="Actor">
+                            <param id="0" name="Animation">&quot;Default&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
             </sub-events>
         </event-group>
-        <event-block sid="4050987777506891">
-            <conditions>
-                <condition id="3" name="On key released" sid="4753499436279622" type="Keyboard">
-                    <param id="0" name="Key">67 (C)</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="4" name="Set animation" sid="5369209316571019" type="Actor">
-                    <param id="0" name="Animation">&quot;Default&quot;</param>
-                    <param id="1" name="From">1</param>
-                </action>
-            </actions>
-        </event-block>
     </events>
 </c2eventsheet>
