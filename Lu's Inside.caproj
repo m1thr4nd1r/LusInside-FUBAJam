@@ -10,7 +10,9 @@
     <unique-id>vd288e3ogx3t</unique-id>
     <saved-with-version>15802</saved-with-version>
     <used-plugins>
+        <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
+        <plugin author="Scirra" id="TextBox" version="1">Text box</plugin>
         <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
     </used-plugins>
     <used-behaviors />
@@ -23,6 +25,7 @@
         <height>480</height>
     </window-size>
     <pixel-rounding>0</pixel-rounding>
+    <first-layout>Layout 1</first-layout>
     <use-loader-layout>0</use-loader-layout>
     <configuration-settings>
         <prop name="Clear background">Yes</prop>
@@ -44,11 +47,55 @@
         </object-type>
         <object-type name="Sprite" sid="2699600694461439">
             <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable comment="Raiva do Personagem" name="Anger" sid="9070440626254734" type="number" />
+            </instance-variables>
             <animation-folder expanded="1">
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="2096450607162536" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="2096450607162536" speed="5">
+                    <frame duration="1" hotspotX="0.511628" hotspotY="0.512195" />
+                    <frame duration="1" hotspotX="-0.296512" hotspotY="0.97561" />
                 </animation>
             </animation-folder>
+        </object-type>
+        <object-type name="Keyboard" sid="4194083978207031">
+            <plugin id="Keyboard" />
+        </object-type>
+        <object-type name="Actor" sid="899121252285203">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable comment="Raiva do Personagem" name="Anger" sid="3476776876737286" type="number" />
+            </instance-variables>
+            <animation-folder expanded="1">
+                <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="3010073633659932" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.503497">
+                        <collision-poly>
+                            <point x="0.139535" y="0.167832" />
+                            <point x="0.5" y="0.00699301" />
+                            <point x="0.860465" y="0.167832" />
+                            <point x="0.982558" y="0.496504" />
+                            <point x="0.860465" y="0.832168" />
+                            <point x="0.5" y="1" />
+                            <point x="0.139535" y="0.832168" />
+                            <point x="0.0174419" y="0.496504" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.503497">
+                        <collision-poly>
+                            <point x="0.139535" y="0.167832" />
+                            <point x="0.5" y="0.00699301" />
+                            <point x="0.860465" y="0.167832" />
+                            <point x="0.982558" y="0.496504" />
+                            <point x="0.860465" y="0.832168" />
+                            <point x="0.5" y="1" />
+                            <point x="0.139535" y="0.832168" />
+                            <point x="0.0174419" y="0.496504" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="TextBox" sid="258767327698614">
+            <plugin id="TextBox" />
         </object-type>
     </object-folder>
     <families />
@@ -58,7 +105,9 @@
     <event-folder expanded="1">
         <event-sheet>Event sheet 1.xml</event-sheet>
     </event-folder>
-    <global-instances />
+    <global-instances>
+        <global-instance type="Keyboard" uid="2" />
+    </global-instances>
     <sounds-folder expanded="1" />
     <music-folder expanded="1" />
     <files-folder expanded="1">
