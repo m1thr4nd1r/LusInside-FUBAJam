@@ -369,7 +369,7 @@
                     </conditions>
                     <actions>
                         <action id="4" name="Set animation" sid="1348894318899479" type="Actor">
-                            <param id="0" name="Animation">&quot;DefaultAnger&quot;</param>
+                            <param id="0" name="Animation">&quot;Animation2&quot;</param>
                             <param id="1" name="From">1</param>
                         </action>
                     </actions>
