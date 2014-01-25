@@ -52,18 +52,6 @@
             <plugin id="TiledBg" />
             <texture />
         </object-type>
-        <object-type name="Sprite" sid="2699600694461439">
-            <plugin id="Sprite" />
-            <instance-variables>
-                <instance-variable comment="Raiva do Personagem" name="Anger" sid="9070440626254734" type="number" />
-            </instance-variables>
-            <animation-folder expanded="1">
-                <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="2096450607162536" speed="5">
-                    <frame duration="1" hotspotX="0.511628" hotspotY="0.512195" />
-                    <frame duration="1" hotspotX="-0.296512" hotspotY="0.97561" />
-                </animation>
-            </animation-folder>
-        </object-type>
         <object-type name="Keyboard" sid="4194083978207031">
             <plugin id="Keyboard" />
         </object-type>
@@ -210,6 +198,7 @@
                         </collision-poly>
                     </frame>
                 </animation>
+<<<<<<< HEAD
                 <animation framecount="5" loop="1" name="WalkingAnger" pingpong="0" repeatcount="1" repeatto="0" sid="2528758685679594" speed="5">
                     <frame duration="1" hotspotX="0.506667" hotspotY="0.496">
                         <collision-poly>
@@ -252,6 +241,8 @@
                         </collision-poly>
                     </frame>
                 </animation>
+=======
+>>>>>>> cd7b2e1e3367b9df2158e3177b885b6eea024773
                 <animation framecount="3" loop="0" name="AttackingAnger" pingpong="0" repeatcount="1" repeatto="0" sid="2940673691915727" speed="5">
                     <frame duration="1" hotspotX="0.506667" hotspotY="0.504">
                         <collision-poly>
@@ -305,6 +296,13 @@
                 </animation>
                 <animation framecount="1" loop="0" name="ChattingAnger" pingpong="0" repeatcount="1" repeatto="0" sid="9479184025957436" speed="5">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+                <animation framecount="5" loop="0" name="WalkingAnger" pingpong="0" repeatcount="1" repeatto="0" sid="7983870647900473" speed="5">
+                    <frame duration="1" hotspotX="0.506667" hotspotY="0.504" />
+                    <frame duration="1" hotspotX="0.506667" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.506667" hotspotY="0.504" />
+                    <frame duration="1" hotspotX="0.506667" hotspotY="0.504" />
+                    <frame duration="1" hotspotX="0.506667" hotspotY="0.504" />
                 </animation>
             </animation-folder>
         </object-type>
@@ -363,14 +361,6 @@
                     <behavior id="Timer" />
                 </behavior-type>
             </behaviors>
-        </object-type>
-        <object-type name="Sprite2" sid="3174184914643406">
-            <plugin id="Sprite" />
-            <animation-folder expanded="1">
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="1890340287552918" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                </animation>
-            </animation-folder>
         </object-type>
         <object-type name="Rage" sid="6609353654244507">
             <plugin id="Text" />
