@@ -196,6 +196,7 @@
                         <condition id="2" name="Key is down" sid="8362268695943015" type="Keyboard">
                             <param id="0" name="Key">88 (X)</param>
                         </condition>
+                        <condition behavior="Platform" id="0" inverted="1" name="Is moving" sid="7044757422646295" type="Actor" />
                     </conditions>
                     <actions>
                         <action id="4" name="Set animation" sid="2514191960062197" type="Actor">
@@ -209,7 +210,7 @@
                         <condition id="4" name="On finished" sid="3288368350623419" type="Actor">
                             <param id="0" name="Animation">&quot;Attacking&quot;</param>
                         </condition>
-                        <condition id="7" inverted="1" name="Is mirrored" sid="56388539372176" type="Actor" />
+                        <condition id="7" name="Is mirrored" sid="56388539372176" type="Actor" />
                     </conditions>
                     <actions>
                         <action id="0" name="Spawn another object" sid="6819412778166719" type="Actor">
@@ -227,7 +228,7 @@
                         <condition id="4" name="On finished" sid="4101212398288994" type="Actor">
                             <param id="0" name="Animation">&quot;Attacking&quot;</param>
                         </condition>
-                        <condition id="7" name="Is mirrored" sid="3100209946281003" type="Actor" />
+                        <condition id="7" inverted="1" name="Is mirrored" sid="3100209946281003" type="Actor" />
                     </conditions>
                     <actions>
                         <action id="0" name="Spawn another object" sid="6012668646511871" type="Actor">
