@@ -29,7 +29,7 @@
                 <action id="5" name="Set frame" sid="4529009356248742" type="Actor">
                     <param id="0" name="Frame number">0</param>
                 </action>
-                <action id="0" name="Set text" sid="3705484113761466" type="TextBox">
+                <action id="0" name="Set text" sid="3705484113761466" type="Rage">
                     <param id="0" name="Text">&quot;Raiva: &quot; &amp; Actor.Anger</param>
                 </action>
             </actions>
@@ -94,13 +94,20 @@
                 <condition id="1" name="Is overlapping another object" sid="188112004588793" type="Shoot">
                     <param id="0" name="Object">LoveNPC</param>
                 </condition>
+                <condition id="-8" name="Is boolean instance variable set" sid="5690168532587923" type="LoveNPC">
+                    <param id="0" name="Instance variable">WaitingInteraction</param>
+                </condition>
             </conditions>
             <actions>
-                <action id="-9" name="Destroy" sid="8284565297701531" type="LoveNPC" />
+                <action id="-13" name="Set boolean" sid="1423874741467179" type="LoveNPC">
+                    <param id="0" name="Instance variable">WaitingInteraction</param>
+                    <param id="1" name="Value">0</param>
+                </action>
                 <action id="-11" name="Add to" sid="2305877112352842" type="Actor">
                     <param id="0" name="Instance variable">Anger</param>
                     <param id="1" name="Value">1000</param>
                 </action>
+                <action id="-9" name="Destroy" sid="8284565297701531" type="LoveNPC" />
             </actions>
         </event-block>
         <event-block sid="5673795264075252">
@@ -110,6 +117,9 @@
                 </condition>
                 <condition id="1" name="Is overlapping another object" sid="2755167733024396" type="Actor">
                     <param id="0" name="Object">LoveNPC</param>
+                </condition>
+                <condition id="-8" name="Is boolean instance variable set" sid="8491758175705054" type="LoveNPC">
+                    <param id="0" name="Instance variable">WaitingInteraction</param>
                 </condition>
             </conditions>
             <actions>
@@ -121,6 +131,33 @@
                     <param id="0" name="Instance variable">Boredom</param>
                     <param id="1" name="Value">1000</param>
                 </action>
+                <action id="0" name="Spawn another object" sid="3051759294987207" type="Actor">
+                    <param id="0" name="Object">Chatting</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="Image point">2</param>
+                </action>
+                <action behavior="Timer" id="0" name="Start timer" sid="1493556878226522" type="Chatting">
+                    <param id="0" name="Duration">1</param>
+                    <param id="1" name="Type">0</param>
+                    <param id="2" name="Tag">&quot;Life&quot;</param>
+                </action>
+                <action id="0" name="Set text" sid="4697184746658639" type="Chatting">
+                    <param id="0" name="Text">&quot;Que legal você&quot;</param>
+                </action>
+                <action id="-13" name="Set boolean" sid="5592381306359899" type="LoveNPC">
+                    <param id="0" name="Instance variable">WaitingInteraction</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="1407133364018316">
+            <conditions>
+                <condition behavior="Timer" id="0" name="On timer" sid="4719615028368471" type="Chatting">
+                    <param id="0" name="Tag">&quot;Life&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="1334584506907286" type="Chatting" />
             </actions>
         </event-block>
     </events>

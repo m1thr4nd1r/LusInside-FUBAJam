@@ -18,6 +18,7 @@
     <used-behaviors>
         <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
         <behavior author="Scirra" id="Platform" version="1">Platform</behavior>
+        <behavior author="Scirra" id="Timer" version="1">Timer</behavior>
         <behavior author="Scirra" id="bound" version="1">Bound to layout</behavior>
         <behavior author="Scirra" id="solid" version="1">Solid</behavior>
     </used-behaviors>
@@ -30,7 +31,7 @@
         <height>1024</height>
     </window-size>
     <pixel-rounding>0</pixel-rounding>
-    <first-layout>Layout 1</first-layout>
+    <first-layout>Main Game</first-layout>
     <use-loader-layout>0</use-loader-layout>
     <configuration-settings>
         <prop name="Clear background">Yes</prop>
@@ -46,7 +47,7 @@
         <prop name="Use high-DPI display">Yes</prop>
     </configuration-settings>
     <object-folder expanded="1">
-        <object-type name="TiledBackground" sid="8351093588731499">
+        <object-type name="BG" sid="8351093588731499">
             <plugin id="TiledBg" />
             <texture />
         </object-type>
@@ -88,6 +89,7 @@
                 <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="3010073633659932" speed="5">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.503497">
                         <image-point name="Shoot" x="0.97093" y="0.51049" />
+                        <image-point name="Chatting" x="0.988372" y="0.020979" />
                         <collision-poly>
                             <point x="0.139535" y="0.167832" />
                             <point x="0.5" y="0.00699301" />
@@ -100,6 +102,8 @@
                         </collision-poly>
                     </frame>
                     <frame duration="1" hotspotX="0.5" hotspotY="0.503497">
+                        <image-point name="Shoot" x="0.959302" y="0.475524" />
+                        <image-point name="Chatting" x="0.988372" y="0.020979" />
                         <collision-poly>
                             <point x="0.139535" y="0.167832" />
                             <point x="0.5" y="0.00699301" />
@@ -114,7 +118,7 @@
                 </animation>
             </animation-folder>
         </object-type>
-        <object-type name="TextBox" sid="258767327698614">
+        <object-type name="Rage" sid="258767327698614">
             <plugin id="TextBox" />
         </object-type>
         <object-type name="Ground" sid="1945360297141103">
@@ -132,6 +136,9 @@
         </object-type>
         <object-type name="LoveNPC" sid="6978132866598334">
             <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable comment="Se ja houve interação entre NPC e player" name="WaitingInteraction" sid="9601666127083443" type="boolean" />
+            </instance-variables>
             <animation-folder expanded="1">
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="9811612667712811" speed="5">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.503497">
@@ -162,10 +169,18 @@
                 </animation>
             </animation-folder>
         </object-type>
+        <object-type name="Chatting" sid="8459004227780996">
+            <plugin id="TextBox" />
+            <behaviors>
+                <behavior-type name="Timer" sid="1566185789961781">
+                    <behavior id="Timer" />
+                </behavior-type>
+            </behaviors>
+        </object-type>
     </object-folder>
     <families />
     <layout-folder expanded="1">
-        <layout>Layout 1.xml</layout>
+        <layout>Main Game.xml</layout>
     </layout-folder>
     <event-folder expanded="1">
         <event-sheet>Event sheet 1.xml</event-sheet>

@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <c2layout>
-    <name>Layout 1</name>
+    <name>Main Game</name>
     <sid>9868889551130835</sid>
     <event-sheet>Event sheet 1</event-sheet>
     <size>
@@ -27,7 +27,7 @@
             <blend-mode>0</blend-mode>
             <effect-fallback>0</effect-fallback>
             <instances>
-                <instance type="TiledBackground" uid="0">
+                <instance type="BG" uid="0">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
                         <hotspot>Top-left</hotspot>
@@ -99,7 +99,7 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="TextBox" uid="3">
+                <instance type="Rage" uid="3">
                     <properties>
                         <text></text>
                         <placeholder></placeholder>
@@ -161,6 +161,9 @@
                         <initial-frame>0</initial-frame>
                         <collisions>Enabled</collisions>
                     </properties>
+                    <instance-variables>
+                        <WaitingInteraction>true</WaitingInteraction>
+                    </instance-variables>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
@@ -208,6 +211,35 @@
                         <hotspotY>0.699999988</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="Chatting" uid="7">
+                    <properties>
+                        <text></text>
+                        <placeholder></placeholder>
+                        <tooltip></tooltip>
+                        <initial-visibility>Visible</initial-visibility>
+                        <enabled>Yes</enabled>
+                        <read-only>No</read-only>
+                        <spell-check>No</spell-check>
+                        <type>Text</type>
+                        <auto-font-size>Yes</auto-font-size>
+                        <id-optional></id-optional>
+                    </properties>
+                    <behavior-instances>
+                        <behavior-instance type="Timer" />
+                    </behavior-instances>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>1294</x>
+                        <y>21</y>
+                        <z>0</z>
+                        <width>217</width>
+                        <height>41</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0</hotspotY>
                     </world>
                 </instance>
             </instances>
