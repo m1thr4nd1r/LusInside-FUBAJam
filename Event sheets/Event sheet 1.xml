@@ -12,6 +12,9 @@
                     <param id="0" name="Instance variable">Anger</param>
                     <param id="1" name="Value">1</param>
                 </action>
+                <action id="0" name="Set text" sid="7617878744818082" type="Rage">
+                    <param id="0" name="Text">&quot;Raiva: &quot; &amp; Actor.Anger</param>
+                </action>
             </actions>
         </event-block>
         <event-block sid="5059760725028189">
@@ -105,6 +108,11 @@
                 <event-block sid="3809037596564084">
                     <conditions>
                         <condition behavior="Platform" id="7" name="On stopped" sid="6318902982778951" type="Actor" />
+                        <condition id="-7" name="Compare instance variable" sid="2635416894344315" type="Actor">
+                            <param id="0" name="Instance variable">Anger</param>
+                            <param id="1" name="Comparison">2</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
                     </conditions>
                     <actions>
                         <action id="4" name="Set animation" sid="1348894318899479" type="Actor">
@@ -147,6 +155,11 @@
             <conditions>
                 <condition behavior="Platform" id="0" name="Is moving" sid="5366456846774936" type="Actor" />
                 <condition behavior="Platform" id="2" name="Is on floor" sid="8809721074618485" type="Actor" />
+                <condition id="-7" name="Compare instance variable" sid="5889054350013718" type="Actor">
+                    <param id="0" name="Instance variable">Anger</param>
+                    <param id="1" name="Comparison">2</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
             </conditions>
             <actions>
                 <action id="4" name="Set animation" sid="4564165415359892" type="Actor">
@@ -168,6 +181,11 @@
                 <event-block sid="2943247661833908">
                     <conditions>
                         <condition behavior="Platform" id="3" name="Is jumping" sid="4052802063346388" type="Actor" />
+                        <condition id="-7" name="Compare instance variable" sid="389035921975073" type="Actor">
+                            <param id="0" name="Instance variable">Anger</param>
+                            <param id="1" name="Comparison">2</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
                     </conditions>
                     <actions>
                         <action id="4" name="Set animation" sid="9398997706310284" type="Actor">
@@ -179,6 +197,11 @@
                 <event-block sid="1672256087183027">
                     <conditions>
                         <condition behavior="Platform" id="9" name="On landed" sid="8765434858654811" type="Actor" />
+                        <condition id="-7" name="Compare instance variable" sid="2089208455160037" type="Actor">
+                            <param id="0" name="Instance variable">Anger</param>
+                            <param id="1" name="Comparison">2</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
                     </conditions>
                     <actions>
                         <action id="4" name="Set animation" sid="2312433148759483" type="Actor">
@@ -189,7 +212,7 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group description="" sid="834502333519228" title="attaking normal">
+        <event-group description="" sid="834502333519228" title="attacking normal">
             <sub-events>
                 <event-block sid="2454738931766687">
                     <conditions>
@@ -197,6 +220,11 @@
                             <param id="0" name="Key">88 (X)</param>
                         </condition>
                         <condition behavior="Platform" id="0" inverted="1" name="Is moving" sid="7044757422646295" type="Actor" />
+                        <condition id="-7" name="Compare instance variable" sid="8257980117269363" type="Actor">
+                            <param id="0" name="Instance variable">Anger</param>
+                            <param id="1" name="Comparison">2</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
                     </conditions>
                     <actions>
                         <action id="4" name="Set animation" sid="2514191960062197" type="Actor">
@@ -209,6 +237,11 @@
                     <conditions>
                         <condition id="4" name="On finished" sid="3288368350623419" type="Actor">
                             <param id="0" name="Animation">&quot;Attacking&quot;</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="5550409499386538" type="Actor">
+                            <param id="0" name="Instance variable">Anger</param>
+                            <param id="1" name="Comparison">2</param>
+                            <param id="2" name="Value">0</param>
                         </condition>
                     </conditions>
                     <actions>
@@ -247,6 +280,11 @@
                         <condition id="3" name="On key released" sid="6521828764409962" type="Keyboard">
                             <param id="0" name="Key">88 (X)</param>
                         </condition>
+                        <condition id="-7" name="Compare instance variable" sid="9081675176380993" type="Actor">
+                            <param id="0" name="Instance variable">Anger</param>
+                            <param id="1" name="Comparison">2</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
                     </conditions>
                     <actions>
                         <action id="4" name="Set animation" sid="570866934844421" type="Actor">
@@ -265,6 +303,11 @@
                         <condition id="2" name="Key is down" sid="3965083811205499" type="Keyboard">
                             <param id="0" name="Key">67 (C)</param>
                         </condition>
+                        <condition id="-7" name="Compare instance variable" sid="3914191668254223" type="Actor">
+                            <param id="0" name="Instance variable">Anger</param>
+                            <param id="1" name="Comparison">2</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
                     </conditions>
                     <actions>
                         <action id="4" name="Set animation" sid="1537306360991636" type="Actor">
@@ -278,10 +321,108 @@
                         <condition id="3" name="On key released" sid="4753499436279622" type="Keyboard">
                             <param id="0" name="Key">67 (C)</param>
                         </condition>
+                        <condition id="-7" name="Compare instance variable" sid="1804806711558619" type="Actor">
+                            <param id="0" name="Instance variable">Anger</param>
+                            <param id="1" name="Comparison">2</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
                     </conditions>
                     <actions>
                         <action id="4" name="Set animation" sid="5369209316571019" type="Actor">
                             <param id="0" name="Animation">&quot;Default&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-block sid="9143504447020323">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="7764526112646306" type="Actor">
+                    <param id="0" name="Instance variable">Anger</param>
+                    <param id="1" name="Comparison">3</param>
+                    <param id="2" name="Value">-1000</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-10" name="Set value" sid="7038321195133428" type="Actor">
+                    <param id="0" name="Instance variable">Anger</param>
+                    <param id="1" name="Value">-1000</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-group description="" sid="5214820561577503" title="WalkingAnger">
+            <sub-events>
+                <event-block sid="5534653080689867">
+                    <conditions>
+                        <condition behavior="Platform" id="0" name="Is moving" sid="7317039893093403" type="Actor" />
+                        <condition behavior="Platform" id="2" name="Is on floor" sid="7564277180033228" type="Actor" />
+                        <condition id="-7" name="Compare instance variable" sid="4818276310658884" type="Actor">
+                            <param id="0" name="Instance variable">Anger</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                        <condition id="-4" name="Trigger once while true" sid="9260681443210922" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="8064254452607602" type="Actor">
+                            <param id="0" name="Animation">&quot;WalkingAnger&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="1280312278582618" title="default anger">
+            <sub-events>
+                <event-block sid="3809037596564084">
+                    <conditions>
+                        <condition behavior="Platform" id="7" name="On stopped" sid="6318902982778951" type="Actor" />
+                        <condition id="-7" name="Compare instance variable" sid="2635416894344315" type="Actor">
+                            <param id="0" name="Instance variable">Anger</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="1348894318899479" type="Actor">
+                            <param id="0" name="Animation">&quot;DefaultAnger&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="6137471746492435" title="Jumping Anger">
+            <sub-events>
+                <event-block sid="6443836906405993">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="5521472347096548" type="Actor">
+                            <param id="0" name="Instance variable">Anger</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                        <condition behavior="Platform" id="3" name="Is jumping" sid="5254770901830181" type="Actor" />
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="8093577965944262" type="Actor">
+                            <param id="0" name="Animation">&quot;JumpingAnger&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="5832505712074926">
+                    <conditions>
+                        <condition behavior="Platform" id="9" name="On landed" sid="8806072202619921" type="Actor" />
+                        <condition id="-7" name="Compare instance variable" sid="8808257492799024" type="Actor">
+                            <param id="0" name="Instance variable">Anger</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="7392340750517189" type="Actor">
+                            <param id="0" name="Animation">&quot;DefaultAnger&quot;</param>
                             <param id="1" name="From">1</param>
                         </action>
                     </actions>
