@@ -125,57 +125,33 @@
         </event-group>
         <event-group description="" sid="1000924135542746" title="walking normal">
             <sub-events>
-                <event-block sid="7751382680671415">
+                <event-block sid="4587436122071793">
                     <conditions>
-                        <condition id="0" name="On key pressed" sid="2946152056852993" type="Keyboard">
-                            <param id="0" name="Key">37 (Left arrow)</param>
+                        <condition behavior="Platform" id="0" name="Is moving" sid="5366456846774936" type="Actor" />
+                        <condition behavior="Platform" id="2" name="Is on floor" sid="8809721074618485" type="Actor" />
+                        <condition id="-7" name="Compare instance variable" sid="5889054350013718" type="Actor">
+                            <param id="0" name="Instance variable">Anger</param>
+                            <param id="1" name="Comparison">2</param>
+                            <param id="2" name="Value">0</param>
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="7" name="Set mirrored" sid="941042875878673" type="Actor">
-                            <param id="0" name="State">0</param>
+                        <action id="4" name="Set animation" sid="4564165415359892" type="Actor">
+                            <param id="0" name="Animation">&quot;Walking&quot;</param>
+                            <param id="1" name="From">1</param>
                         </action>
-                    </actions>
-                </event-block>
-                <event-block sid="2642787498051174">
-                    <conditions>
-                        <condition id="0" name="On key pressed" sid="2527411865953925" type="Keyboard">
-                            <param id="0" name="Key">39 (Right arrow)</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="7" name="Set mirrored" sid="7379588037071523" type="Actor">
-                            <param id="0" name="State">1</param>
+                        <action id="-11" name="Add to" sid="2292679501883874" type="Actor">
+                            <param id="0" name="Instance variable">Anger</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-12" name="Subtract from" sid="998793939101964" type="Actor">
+                            <param id="0" name="Instance variable">Boredom</param>
+                            <param id="1" name="Value">1</param>
                         </action>
                     </actions>
                 </event-block>
             </sub-events>
         </event-group>
-        <event-block sid="4587436122071793">
-            <conditions>
-                <condition behavior="Platform" id="0" name="Is moving" sid="5366456846774936" type="Actor" />
-                <condition behavior="Platform" id="2" name="Is on floor" sid="8809721074618485" type="Actor" />
-                <condition id="-7" name="Compare instance variable" sid="5889054350013718" type="Actor">
-                    <param id="0" name="Instance variable">Anger</param>
-                    <param id="1" name="Comparison">2</param>
-                    <param id="2" name="Value">0</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="4" name="Set animation" sid="4564165415359892" type="Actor">
-                    <param id="0" name="Animation">&quot;Walking&quot;</param>
-                    <param id="1" name="From">1</param>
-                </action>
-                <action id="-11" name="Add to" sid="2292679501883874" type="Actor">
-                    <param id="0" name="Instance variable">Anger</param>
-                    <param id="1" name="Value">1</param>
-                </action>
-                <action id="-12" name="Subtract from" sid="998793939101964" type="Actor">
-                    <param id="0" name="Instance variable">Boredom</param>
-                    <param id="1" name="Value">1</param>
-                </action>
-            </actions>
-        </event-block>
         <event-group description="" sid="5896083967327853" title="jumping normal">
             <sub-events>
                 <event-block sid="2943247661833908">
@@ -353,21 +329,28 @@
         </event-block>
         <event-group description="" sid="5214820561577503" title="WalkingAnger">
             <sub-events>
-                <event-block sid="5534653080689867">
+                <event-block sid="9544408382890321">
                     <conditions>
-                        <condition behavior="Platform" id="0" name="Is moving" sid="7317039893093403" type="Actor" />
-                        <condition behavior="Platform" id="2" name="Is on floor" sid="7564277180033228" type="Actor" />
-                        <condition id="-7" name="Compare instance variable" sid="4818276310658884" type="Actor">
+                        <condition behavior="Platform" id="0" name="Is moving" sid="387573709126965" type="Actor" />
+                        <condition behavior="Platform" id="2" name="Is on floor" sid="1094685777086635" type="Actor" />
+                        <condition id="-7" name="Compare instance variable" sid="1304746574909721" type="Actor">
                             <param id="0" name="Instance variable">Anger</param>
                             <param id="1" name="Comparison">4</param>
                             <param id="2" name="Value">0</param>
                         </condition>
-                        <condition id="-4" name="Trigger once while true" sid="9260681443210922" type="System" />
                     </conditions>
                     <actions>
-                        <action id="4" name="Set animation" sid="8064254452607602" type="Actor">
+                        <action id="4" name="Set animation" sid="1505646771386163" type="Actor">
                             <param id="0" name="Animation">&quot;WalkingAnger&quot;</param>
                             <param id="1" name="From">1</param>
+                        </action>
+                        <action id="-11" name="Add to" sid="4511262798598639" type="Actor">
+                            <param id="0" name="Instance variable">Anger</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-12" name="Subtract from" sid="2701656384327113" type="Actor">
+                            <param id="0" name="Instance variable">Boredom</param>
+                            <param id="1" name="Value">1</param>
                         </action>
                     </actions>
                 </event-block>
@@ -424,6 +407,34 @@
                         <action id="4" name="Set animation" sid="7392340750517189" type="Actor">
                             <param id="0" name="Animation">&quot;DefaultAnger&quot;</param>
                             <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="9312313597302685" title="Set Mirroed">
+            <sub-events>
+                <event-block sid="4730089856391912">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="5069458752151308" type="Keyboard">
+                            <param id="0" name="Key">37 (Left arrow)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="7" name="Set mirrored" sid="5397556677780434" type="Actor">
+                            <param id="0" name="State">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="9947535237290935">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="2924031178244504" type="Keyboard">
+                            <param id="0" name="Key">39 (Right arrow)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="7" name="Set mirrored" sid="9946526592765247" type="Actor">
+                            <param id="0" name="State">1</param>
                         </action>
                     </actions>
                 </event-block>
