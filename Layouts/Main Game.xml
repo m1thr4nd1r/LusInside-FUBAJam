@@ -90,11 +90,11 @@
                         <x>119</x>
                         <y>899</y>
                         <z>0</z>
-                        <width>172</width>
-                        <height>143</height>
+                        <width>50</width>
+                        <height>100</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
-                        <hotspotY>0.503496528</hotspotY>
+                        <hotspotY>0.5</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
                     </world>

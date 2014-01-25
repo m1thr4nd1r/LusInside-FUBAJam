@@ -160,5 +160,184 @@
                 <action id="-9" name="Destroy" sid="1334584506907286" type="Chatting" />
             </actions>
         </event-block>
+        <event-group description="" sid="6441324882011083" title="default normal">
+            <sub-events>
+                <event-block sid="3809037596564084">
+                    <conditions>
+                        <condition behavior="Platform" id="7" name="On stopped" sid="6318902982778951" type="Actor" />
+                        <condition behavior="Platform" id="2" name="Is on floor" sid="4275515922519575" type="Actor" />
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="1348894318899479" type="Actor">
+                            <param id="0" name="Animation">&quot;Default&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="1000924135542746" title="walking normal">
+            <sub-events>
+                <event-block sid="4587436122071793">
+                    <conditions>
+                        <condition behavior="Platform" id="0" name="Is moving" sid="5366456846774936" type="Actor" />
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="4564165415359892" type="Actor">
+                            <param id="0" name="Animation">&quot;Walking&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="7751382680671415">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="2946152056852993" type="Keyboard">
+                            <param id="0" name="Key">37 (Left arrow)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="7" name="Set mirrored" sid="941042875878673" type="Actor">
+                            <param id="0" name="State">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="2642787498051174">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="2527411865953925" type="Keyboard">
+                            <param id="0" name="Key">39 (Right arrow)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="7" name="Set mirrored" sid="7379588037071523" type="Actor">
+                            <param id="0" name="State">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="5896083967327853" title="jumping normal">
+            <sub-events>
+                <event-block sid="2943247661833908">
+                    <conditions>
+                        <condition behavior="Platform" id="2" name="Is on floor" sid="3982953848478345" type="Actor" />
+                        <condition behavior="Platform" id="3" name="Is jumping" sid="4052802063346388" type="Actor" />
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="9398997706310284" type="Actor">
+                            <param id="0" name="Animation">&quot;Jumping&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="1672256087183027">
+                    <conditions>
+                        <condition behavior="Platform" id="9" name="On landed" sid="8765434858654811" type="Actor" />
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="2312433148759483" type="Actor">
+                            <param id="0" name="Animation">&quot;Default&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="834502333519228" title="attaking normal">
+            <sub-events>
+                <event-block sid="2454738931766687">
+                    <conditions>
+                        <condition id="2" name="Key is down" sid="8362268695943015" type="Keyboard">
+                            <param id="0" name="Key">88 (X)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="2514191960062197" type="Actor">
+                            <param id="0" name="Animation">&quot;Attacking&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="9912525598579448">
+                    <conditions>
+                        <condition id="4" name="On finished" sid="3288368350623419" type="Actor">
+                            <param id="0" name="Animation">&quot;Attacking&quot;</param>
+                        </condition>
+                        <condition id="7" inverted="1" name="Is mirrored" sid="56388539372176" type="Actor" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Spawn another object" sid="6819412778166719" type="Actor">
+                            <param id="0" name="Object">Shoot</param>
+                            <param id="1" name="Layer">1</param>
+                            <param id="2" name="Image point">1</param>
+                        </action>
+                        <action behavior="Bullet" id="3" name="Set angle of motion" sid="2324976919442946" type="Shoot">
+                            <param id="0" name="Angle">180</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="7350435642892457">
+                    <conditions>
+                        <condition id="4" name="On finished" sid="4101212398288994" type="Actor">
+                            <param id="0" name="Animation">&quot;Attacking&quot;</param>
+                        </condition>
+                        <condition id="7" name="Is mirrored" sid="3100209946281003" type="Actor" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Spawn another object" sid="6012668646511871" type="Actor">
+                            <param id="0" name="Object">Shoot</param>
+                            <param id="1" name="Layer">1</param>
+                            <param id="2" name="Image point">1</param>
+                        </action>
+                        <action behavior="Bullet" id="3" name="Set angle of motion" sid="2755130019737691" type="Shoot">
+                            <param id="0" name="Angle">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="6773239338776027">
+                    <conditions>
+                        <condition id="3" name="On key released" sid="6521828764409962" type="Keyboard">
+                            <param id="0" name="Key">88 (X)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="570866934844421" type="Actor">
+                            <param id="0" name="Animation">&quot;Default&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="1696036262724467" title="chatting normal">
+            <sub-events>
+                <event-block sid="7102356617707963">
+                    <conditions>
+                        <condition behavior="Platform" id="2" name="Is on floor" sid="1552096699886631" type="Actor" />
+                        <condition id="2" name="Key is down" sid="3965083811205499" type="Keyboard">
+                            <param id="0" name="Key">67 (C)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="1537306360991636" type="Actor">
+                            <param id="0" name="Animation">&quot;Chatting&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-block sid="4050987777506891">
+            <conditions>
+                <condition id="3" name="On key released" sid="4753499436279622" type="Keyboard">
+                    <param id="0" name="Key">67 (C)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="5369209316571019" type="Actor">
+                    <param id="0" name="Animation">&quot;Default&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
     </events>
 </c2eventsheet>
