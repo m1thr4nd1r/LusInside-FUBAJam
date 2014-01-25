@@ -103,7 +103,7 @@
                 <action id="-9" name="Destroy" sid="1334584506907286" type="Chatting" />
             </actions>
         </event-block>
-        <event-group description="" sid="6441324882011083" title="default normal">
+        <event-group collapsed="1" description="" sid="6441324882011083" title="default normal">
             <sub-events>
                 <event-block sid="3809037596564084">
                     <conditions>
@@ -152,7 +152,7 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group description="" sid="5896083967327853" title="jumping normal">
+        <event-group collapsed="1" description="" sid="5896083967327853" title="jumping normal">
             <sub-events>
                 <event-block sid="2943247661833908">
                     <conditions>
@@ -188,7 +188,7 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group description="" sid="834502333519228" title="attacking normal">
+        <event-group collapsed="1" description="" sid="834502333519228" title="attacking normal">
             <sub-events>
                 <event-block sid="2454738931766687">
                     <conditions>
@@ -271,7 +271,7 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group description="" sid="1696036262724467" title="chatting normal">
+        <event-group collapsed="1" description="" sid="1696036262724467" title="chatting normal">
             <sub-events>
                 <event-block sid="7102356617707963">
                     <conditions>
