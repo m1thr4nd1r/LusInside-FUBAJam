@@ -3,37 +3,6 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Event sheet 1</name>
     <events>
-        <event-block sid="2554435699472229">
-            <conditions>
-                <condition id="-7" name="Compare instance variable" sid="6157372062462532" type="Actor">
-                    <param id="0" name="Instance variable">Anger</param>
-                    <param id="1" name="Comparison">0</param>
-                    <param id="2" name="Value">0</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="5" name="Set frame" sid="8780455432715231" type="Actor">
-                    <param id="0" name="Frame number">1</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block sid="1068351122231837">
-            <conditions>
-                <condition id="-7" name="Compare instance variable" sid="819148936240744" type="Actor">
-                    <param id="0" name="Instance variable">Anger</param>
-                    <param id="1" name="Comparison">4</param>
-                    <param id="2" name="Value">0</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="5" name="Set frame" sid="4529009356248742" type="Actor">
-                    <param id="0" name="Frame number">0</param>
-                </action>
-                <action id="0" name="Set text" sid="3705484113761466" type="Rage">
-                    <param id="0" name="Text">&quot;Raiva: &quot; &amp; Actor.Anger</param>
-                </action>
-            </actions>
-        </event-block>
         <event-block sid="4285507118698778">
             <conditions>
                 <condition id="-1" name="Every tick" sid="7022895666495445" type="System" />
@@ -41,21 +10,6 @@
             <actions>
                 <action id="-12" name="Subtract from" sid="2024308634947719" type="Actor">
                     <param id="0" name="Instance variable">Anger</param>
-                    <param id="1" name="Value">1</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block sid="4414910200636132">
-            <conditions>
-                <condition behavior="Platform" id="0" name="Is moving" sid="5478422053268959" type="Actor" />
-            </conditions>
-            <actions>
-                <action id="-11" name="Add to" sid="3946123586649983" type="Actor">
-                    <param id="0" name="Instance variable">Anger</param>
-                    <param id="1" name="Value">1</param>
-                </action>
-                <action id="-12" name="Subtract from" sid="8152133634431997" type="Actor">
-                    <param id="0" name="Instance variable">Boredom</param>
                     <param id="1" name="Value">1</param>
                 </action>
             </actions>
@@ -72,20 +26,6 @@
                 <action id="-11" name="Add to" sid="5321230846638015" type="Actor">
                     <param id="0" name="Instance variable">Sadness</param>
                     <param id="1" name="Value">1</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block sid="2117499378066423">
-            <conditions>
-                <condition id="3" name="On key released" sid="6559500579564766" type="Keyboard">
-                    <param id="0" name="Key">32 (Space)</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="0" name="Spawn another object" sid="4720077070050518" type="Actor">
-                    <param id="0" name="Object">Shoot</param>
-                    <param id="1" name="Layer">0</param>
-                    <param id="2" name="Image point">1</param>
                 </action>
             </actions>
         </event-block>
@@ -165,7 +105,6 @@
                 <event-block sid="3809037596564084">
                     <conditions>
                         <condition behavior="Platform" id="7" name="On stopped" sid="6318902982778951" type="Actor" />
-                        <condition behavior="Platform" id="2" name="Is on floor" sid="4275515922519575" type="Actor" />
                     </conditions>
                     <actions>
                         <action id="4" name="Set animation" sid="1348894318899479" type="Actor">
@@ -178,17 +117,6 @@
         </event-group>
         <event-group description="" sid="1000924135542746" title="walking normal">
             <sub-events>
-                <event-block sid="4587436122071793">
-                    <conditions>
-                        <condition behavior="Platform" id="0" name="Is moving" sid="5366456846774936" type="Actor" />
-                    </conditions>
-                    <actions>
-                        <action id="4" name="Set animation" sid="4564165415359892" type="Actor">
-                            <param id="0" name="Animation">&quot;Walking&quot;</param>
-                            <param id="1" name="From">1</param>
-                        </action>
-                    </actions>
-                </event-block>
                 <event-block sid="7751382680671415">
                     <conditions>
                         <condition id="0" name="On key pressed" sid="2946152056852993" type="Keyboard">
@@ -215,11 +143,30 @@
                 </event-block>
             </sub-events>
         </event-group>
+        <event-block sid="4587436122071793">
+            <conditions>
+                <condition behavior="Platform" id="0" name="Is moving" sid="5366456846774936" type="Actor" />
+                <condition behavior="Platform" id="2" name="Is on floor" sid="8809721074618485" type="Actor" />
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="4564165415359892" type="Actor">
+                    <param id="0" name="Animation">&quot;Walking&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+                <action id="-11" name="Add to" sid="2292679501883874" type="Actor">
+                    <param id="0" name="Instance variable">Anger</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-12" name="Subtract from" sid="998793939101964" type="Actor">
+                    <param id="0" name="Instance variable">Boredom</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
         <event-group description="" sid="5896083967327853" title="jumping normal">
             <sub-events>
                 <event-block sid="2943247661833908">
                     <conditions>
-                        <condition behavior="Platform" id="2" name="Is on floor" sid="3982953848478345" type="Actor" />
                         <condition behavior="Platform" id="3" name="Is jumping" sid="4052802063346388" type="Actor" />
                     </conditions>
                     <actions>

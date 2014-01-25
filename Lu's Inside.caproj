@@ -148,7 +148,7 @@
                         </collision-poly>
                     </frame>
                 </animation>
-                <animation framecount="1" loop="0" name="Jumping" pingpong="0" repeatcount="1" repeatto="0" sid="634592280204808" speed="5">
+                <animation framecount="1" loop="1" name="Jumping" pingpong="0" repeatcount="1" repeatto="0" sid="634592280204808" speed="5">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5">
                         <collision-poly>
                             <point x="0.24" y="0.14" />
@@ -194,7 +194,22 @@
                         </collision-poly>
                     </frame>
                 </animation>
-                <animation framecount="1" loop="0" name="Animation5" pingpong="0" repeatcount="1" repeatto="0" sid="3165207165698091" speed="5">
+                <animation framecount="1" loop="0" name="Chatting" pingpong="0" repeatcount="1" repeatto="0" sid="3165207165698091" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+                <animation framecount="1" loop="0" name="Anger" pingpong="0" repeatcount="1" repeatto="0" sid="8201114811936464" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+                <animation framecount="1" loop="0" name="WalkingAnger" pingpong="0" repeatcount="1" repeatto="0" sid="2528758685679594" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+                <animation framecount="1" loop="0" name="AttackingAnger" pingpong="0" repeatcount="1" repeatto="0" sid="2940673691915727" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+                <animation framecount="1" loop="0" name="JumpingAnger" pingpong="0" repeatcount="1" repeatto="0" sid="6052145685004319" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+                <animation framecount="1" loop="0" name="ChattingAnger" pingpong="0" repeatcount="1" repeatto="0" sid="9479184025957436" speed="5">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                 </animation>
             </animation-folder>
