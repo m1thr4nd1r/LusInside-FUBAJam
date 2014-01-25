@@ -15,14 +15,18 @@
         <plugin author="Scirra" id="TextBox" version="1">Text box</plugin>
         <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
     </used-plugins>
-    <used-behaviors />
+    <used-behaviors>
+        <behavior author="Scirra" id="Platform" version="1">Platform</behavior>
+        <behavior author="Scirra" id="bound" version="1">Bound to layout</behavior>
+        <behavior author="Scirra" id="solid" version="1">Solid</behavior>
+    </used-behaviors>
     <used-effects />
     <configurations>
         <configuration exporter-descname="HTML5" exporter-id="html5" name="HTML5" />
     </configurations>
     <window-size>
-        <width>640</width>
-        <height>480</height>
+        <width>1280</width>
+        <height>1024</height>
     </window-size>
     <pixel-rounding>0</pixel-rounding>
     <first-layout>Layout 1</first-layout>
@@ -65,6 +69,17 @@
             <instance-variables>
                 <instance-variable comment="Raiva do Personagem" name="Anger" sid="3476776876737286" type="number" />
             </instance-variables>
+            <behaviors>
+                <behavior-type name="Platform" sid="3657509505356606">
+                    <behavior id="Platform" />
+                </behavior-type>
+                <behavior-type name="BoundToLayout" sid="8890056759728429">
+                    <behavior id="bound" />
+                </behavior-type>
+                <behavior-type name="Solid" sid="2901725537392228">
+                    <behavior id="solid" />
+                </behavior-type>
+            </behaviors>
             <animation-folder expanded="1">
                 <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="3010073633659932" speed="5">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.503497">
@@ -96,6 +111,19 @@
         </object-type>
         <object-type name="TextBox" sid="258767327698614">
             <plugin id="TextBox" />
+        </object-type>
+        <object-type name="Ground" sid="1945360297141103">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Solid" sid="4117842910257392">
+                    <behavior id="solid" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder expanded="1">
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="6886509246494339" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
         </object-type>
     </object-folder>
     <families />

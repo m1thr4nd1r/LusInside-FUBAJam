@@ -13,44 +13,6 @@
                 </action>
             </actions>
         </event-block>
-        <event-block sid="7743101788664841">
-            <conditions>
-                <condition id="2" name="Key is down" sid="9292014325447447" type="Keyboard">
-                    <param id="0" name="Key">39 (Right arrow)</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="-8" name="Set angle" sid="8788711133947122" type="Actor">
-                    <param id="0" name="Angle">0</param>
-                </action>
-                <action id="-17" name="Move forward" sid="3641775588264864" type="Actor">
-                    <param id="0" name="Distance">10</param>
-                </action>
-                <action id="-12" name="Subtract from" sid="2396558978761779" type="Actor">
-                    <param id="0" name="Instance variable">Anger</param>
-                    <param id="1" name="Value">1</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block sid="2214567516178205">
-            <conditions>
-                <condition id="2" name="Key is down" sid="4673112703194769" type="Keyboard">
-                    <param id="0" name="Key">37 (Left arrow)</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="-8" name="Set angle" sid="8896641536473054" type="Actor">
-                    <param id="0" name="Angle">180</param>
-                </action>
-                <action id="-17" name="Move forward" sid="4679747651468357" type="Actor">
-                    <param id="0" name="Distance">10</param>
-                </action>
-                <action id="-12" name="Subtract from" sid="3642022281320633" type="Actor">
-                    <param id="0" name="Instance variable">Anger</param>
-                    <param id="1" name="Value">1</param>
-                </action>
-            </actions>
-        </event-block>
         <event-block sid="2554435699472229">
             <conditions>
                 <condition id="-7" name="Compare instance variable" sid="6157372062462532" type="Actor">
@@ -79,6 +41,17 @@
                 </action>
                 <action id="0" name="Set text" sid="3705484113761466" type="TextBox">
                     <param id="0" name="Text">&quot;Raiva: &quot; &amp; Actor.Anger</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="4285507118698778">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="7022895666495445" type="System" />
+            </conditions>
+            <actions>
+                <action id="-12" name="Subtract from" sid="2024308634947719" type="Actor">
+                    <param id="0" name="Instance variable">Anger</param>
+                    <param id="1" name="Value">1</param>
                 </action>
             </actions>
         </event-block>
