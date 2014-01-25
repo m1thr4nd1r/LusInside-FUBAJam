@@ -222,7 +222,7 @@
                     </conditions>
                     <actions>
                         <action id="0" name="Spawn another object" sid="6819412778166719" type="Actor">
-                            <param id="0" name="Object">Shoot</param>
+                            <param id="0" name="Object">cookie</param>
                             <param id="1" name="Layer">1</param>
                             <param id="2" name="Image point">1</param>
                         </action>
@@ -233,7 +233,7 @@
                                 <condition id="7" name="Is mirrored" sid="56388539372176" type="Actor" />
                             </conditions>
                             <actions>
-                                <action behavior="Bullet" id="3" name="Set angle of motion" sid="2324976919442946" type="Shoot">
+                                <action behavior="Bullet" id="3" name="Set angle of motion" sid="2324976919442946" type="cookie">
                                     <param id="0" name="Angle">180</param>
                                 </action>
                             </actions>
@@ -244,7 +244,7 @@
                                 <condition id="7" inverted="1" name="Is mirrored" sid="3100209946281003" type="Actor" />
                             </conditions>
                             <actions>
-                                <action behavior="Bullet" id="3" name="Set angle of motion" sid="2755130019737691" type="Shoot">
+                                <action behavior="Bullet" id="3" name="Set angle of motion" sid="2755130019737691" type="cookie">
                                     <param id="0" name="Angle">0</param>
                                 </action>
                             </actions>
@@ -440,5 +440,13 @@
                 </event-block>
             </sub-events>
         </event-group>
+        <event-block sid="4935728623461823">
+            <conditions>
+                <condition id="-4" name="Is outside layout" sid="8264834312811242" type="cookie" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="6925767179162211" type="cookie" />
+            </actions>
+        </event-block>
     </events>
 </c2eventsheet>
