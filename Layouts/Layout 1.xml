@@ -56,6 +56,9 @@
                     </properties>
                     <instance-variables>
                         <Anger>500</Anger>
+                        <Boredom>0</Boredom>
+                        <Sadness>0</Sadness>
+                        <Happiness>0</Happiness>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Platform">
@@ -84,8 +87,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>127</x>
-                        <y>804</y>
+                        <x>119</x>
+                        <y>899</y>
                         <z>0</z>
                         <width>172</width>
                         <height>143</height>
@@ -115,8 +118,8 @@
                         <x>39</x>
                         <y>21</y>
                         <z>0</z>
-                        <width>150</width>
-                        <height>22</height>
+                        <width>184</width>
+                        <height>48</height>
                         <depth>0</depth>
                         <hotspotX>0</hotspotX>
                         <hotspotY>0</hotspotY>
@@ -147,6 +150,62 @@
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
                         <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="LoveNPC" uid="5">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>649</x>
+                        <y>901</y>
+                        <z>0</z>
+                        <width>172</width>
+                        <height>143</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.503496528</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="Shoot" uid="6">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <behavior-instances>
+                        <behavior-instance type="Bullet">
+                            <properties>
+                                <speed>400</speed>
+                                <acceleration>0</acceleration>
+                                <gravity>0</gravity>
+                                <bounce-off-solids>No</bounce-off-solids>
+                                <set-angle>Yes</set-angle>
+                                <initial-state>Enabled</initial-state>
+                            </properties>
+                        </behavior-instance>
+                    </behavior-instances>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>1316</x>
+                        <y>1</y>
+                        <z>0</z>
+                        <width>35</width>
+                        <height>10</height>
+                        <depth>0</depth>
+                        <hotspotX>0.514285743</hotspotX>
+                        <hotspotY>0.699999988</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
                     </world>

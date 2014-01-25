@@ -3,16 +3,6 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Event sheet 1</name>
     <events>
-        <event-block sid="8291039982667434">
-            <conditions>
-                <condition id="-25" name="On loader layout complete" sid="4432933404988691" type="System" />
-            </conditions>
-            <actions>
-                <action id="3" name="Start" sid="8741102683354909" type="Actor">
-                    <param id="0" name="From">0</param>
-                </action>
-            </actions>
-        </event-block>
         <event-block sid="2554435699472229">
             <conditions>
                 <condition id="-7" name="Compare instance variable" sid="6157372062462532" type="Actor">
@@ -52,6 +42,84 @@
                 <action id="-12" name="Subtract from" sid="2024308634947719" type="Actor">
                     <param id="0" name="Instance variable">Anger</param>
                     <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="4414910200636132">
+            <conditions>
+                <condition behavior="Platform" id="0" name="Is moving" sid="5478422053268959" type="Actor" />
+            </conditions>
+            <actions>
+                <action id="-11" name="Add to" sid="3946123586649983" type="Actor">
+                    <param id="0" name="Instance variable">Anger</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-12" name="Subtract from" sid="8152133634431997" type="Actor">
+                    <param id="0" name="Instance variable">Boredom</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="5059760725028189">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="3500417037148537" type="Actor">
+                    <param id="0" name="Instance variable">Boredom</param>
+                    <param id="1" name="Comparison">4</param>
+                    <param id="2" name="Value">1000</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-11" name="Add to" sid="5321230846638015" type="Actor">
+                    <param id="0" name="Instance variable">Sadness</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="2117499378066423">
+            <conditions>
+                <condition id="3" name="On key released" sid="6559500579564766" type="Keyboard">
+                    <param id="0" name="Key">32 (Space)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Spawn another object" sid="4720077070050518" type="Actor">
+                    <param id="0" name="Object">Shoot</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="Image point">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="8614862127034356">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="188112004588793" type="Shoot">
+                    <param id="0" name="Object">LoveNPC</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="8284565297701531" type="LoveNPC" />
+                <action id="-11" name="Add to" sid="2305877112352842" type="Actor">
+                    <param id="0" name="Instance variable">Anger</param>
+                    <param id="1" name="Value">1000</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="5673795264075252">
+            <conditions>
+                <condition id="3" name="On key released" sid="7907993211592605" type="Keyboard">
+                    <param id="0" name="Key">67 (C)</param>
+                </condition>
+                <condition id="1" name="Is overlapping another object" sid="2755167733024396" type="Actor">
+                    <param id="0" name="Object">LoveNPC</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-12" name="Subtract from" sid="3621451307679836" type="Actor">
+                    <param id="0" name="Instance variable">Anger</param>
+                    <param id="1" name="Value">1000</param>
+                </action>
+                <action id="-12" name="Subtract from" sid="7836846687491697" type="Actor">
+                    <param id="0" name="Instance variable">Boredom</param>
+                    <param id="1" name="Value">1000</param>
                 </action>
             </actions>
         </event-block>

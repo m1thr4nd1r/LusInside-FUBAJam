@@ -16,6 +16,7 @@
         <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
     </used-plugins>
     <used-behaviors>
+        <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
         <behavior author="Scirra" id="Platform" version="1">Platform</behavior>
         <behavior author="Scirra" id="bound" version="1">Bound to layout</behavior>
         <behavior author="Scirra" id="solid" version="1">Solid</behavior>
@@ -68,6 +69,9 @@
             <plugin id="Sprite" />
             <instance-variables>
                 <instance-variable comment="Raiva do Personagem" name="Anger" sid="3476776876737286" type="number" />
+                <instance-variable comment="Nivel de chatiamento do personagem" name="Boredom" sid="8299499084469182" type="number" />
+                <instance-variable comment="Nivel de tristeza" name="Sadness" sid="7318332944515927" type="number" />
+                <instance-variable comment="Nivel de felicidade do personagem" name="Happiness" sid="1308368881120087" type="number" />
             </instance-variables>
             <behaviors>
                 <behavior-type name="Platform" sid="3657509505356606">
@@ -83,6 +87,7 @@
             <animation-folder expanded="1">
                 <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="3010073633659932" speed="5">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.503497">
+                        <image-point name="Shoot" x="0.97093" y="0.51049" />
                         <collision-poly>
                             <point x="0.139535" y="0.167832" />
                             <point x="0.5" y="0.00699301" />
@@ -122,6 +127,38 @@
             <animation-folder expanded="1">
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="6886509246494339" speed="5">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="LoveNPC" sid="6978132866598334">
+            <plugin id="Sprite" />
+            <animation-folder expanded="1">
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="9811612667712811" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.503497">
+                        <collision-poly>
+                            <point x="0.139535" y="0.167832" />
+                            <point x="0.5" y="0.00699301" />
+                            <point x="0.860465" y="0.167832" />
+                            <point x="0.982558" y="0.496504" />
+                            <point x="0.860465" y="0.832168" />
+                            <point x="0.5" y="1" />
+                            <point x="0.139535" y="0.832168" />
+                            <point x="0.0174419" y="0.496504" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Shoot" sid="4937726174475654">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Bullet" sid="2189949129688768">
+                    <behavior id="Bullet" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder expanded="1">
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="8285208251436023" speed="5">
+                    <frame duration="1" hotspotX="0.514286" hotspotY="0.7" />
                 </animation>
             </animation-folder>
         </object-type>
