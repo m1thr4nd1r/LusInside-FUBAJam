@@ -16,11 +16,11 @@
         <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
     </used-plugins>
     <used-behaviors>
+        <behavior author="Scirra" id="solid" version="1">Solid</behavior>
+        <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
         <behavior author="Scirra" id="Platform" version="1">Platform</behavior>
         <behavior author="Scirra" id="Timer" version="1">Timer</behavior>
         <behavior author="Scirra" id="bound" version="1">Bound to layout</behavior>
-        <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
-        <behavior author="Scirra" id="solid" version="1">Solid</behavior>
     </used-behaviors>
     <used-effects />
     <configurations>
@@ -195,7 +195,7 @@
                     </frame>
                 </animation>
                 <animation framecount="1" loop="1" name="Chatting" pingpong="0" repeatcount="1" repeatto="0" sid="3165207165698091" speed="5">
-                    <frame duration="1" hotspotX="-1.#IND" hotspotY="-1.#IND">
+                    <frame duration="1" hotspotX="-1" hotspotY="-1">
                         <collision-poly>
                             <point x="0.34" y="0.17" />
                             <point x="0.5" y="0.1" />

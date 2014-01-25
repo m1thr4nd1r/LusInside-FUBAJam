@@ -205,7 +205,7 @@
                         </action>
                     </actions>
                 </event-block>
-                <event-block collapsed="1" sid="9912525598579448">
+                <event-block sid="9912525598579448">
                     <conditions>
                         <condition id="4" name="On finished" sid="3288368350623419" type="Actor">
                             <param id="0" name="Animation">&quot;Attacking&quot;</param>
@@ -221,7 +221,7 @@
                     <sub-events>
                         <event-block sid="6889316715680777">
                             <conditions>
-                                <condition id="7" inverted="1" name="Is mirrored" sid="56388539372176" type="Actor" />
+                                <condition id="7" name="Is mirrored" sid="56388539372176" type="Actor" />
                             </conditions>
                             <actions>
                                 <action behavior="Bullet" id="3" name="Set angle of motion" sid="2324976919442946" type="Shoot">
@@ -232,7 +232,7 @@
                         <event-block sid="33524962992572">
                             <conditions>
                                 <condition id="-22" name="Else" sid="1480529738571875" type="System" />
-                                <condition id="7" name="Is mirrored" sid="3100209946281003" type="Actor" />
+                                <condition id="7" inverted="1" name="Is mirrored" sid="3100209946281003" type="Actor" />
                             </conditions>
                             <actions>
                                 <action behavior="Bullet" id="3" name="Set angle of motion" sid="2755130019737691" type="Shoot">
