@@ -3,7 +3,6 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Main</name>
     <events>
-        <variable constant="0" name="GoodRandom" sid="5416156318814763" static="0" type="number">0</variable>
         <variable constant="0" name="GoodDirection" sid="2830185868740483" static="0" type="number">0</variable>
         <variable constant="0" name="DogRespawnSide" sid="1584902754791878" static="0" type="number">0</variable>
         <event-block sid="4285507118698778">
@@ -624,17 +623,30 @@
         <event-group description="" sid="8136670134473068" title="Bully" />
         <event-group description="" sid="523201074517911" title="Good">
             <sub-events>
+                <event-block sid="5847450012836304">
+                    <conditions>
+                        <condition id="-4" name="Is outside layout" sid="783459836286117" type="Good" />
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="9240647968493626" type="Good" />
+                    </actions>
+                </event-block>
                 <event-block sid="4440526756981229">
                     <conditions>
                         <condition id="-6" name="Every X seconds" sid="1047897733492471" type="System">
-                            <param id="0" name="Interval (seconds)">5</param>
+                            <param id="0" name="Interval (seconds)">8</param>
                         </condition>
                     </conditions>
-                    <actions />
+                    <actions>
+                        <action id="-9" name="Set value" sid="5911487090562111" type="System">
+                            <param id="0" name="Variable">GoodDirection</param>
+                            <param id="1" name="Value">random(2)</param>
+                        </action>
+                    </actions>
                     <sub-events>
                         <event-block sid="6775238247191939">
                             <conditions>
-                                <condition id="-14" name="Compare variable" sid="6449119229005622" type="System">
+                                <condition disabled="1" id="-14" name="Compare variable" sid="6449119229005622" type="System">
                                     <param id="0" name="Variable">GoodDirection</param>
                                     <param id="1" name="Comparison">0</param>
                                     <param id="2" name="Value">0</param>
@@ -643,7 +655,7 @@
                             <actions>
                                 <action id="-3" name="Create object" sid="8102777329640797" type="System">
                                     <param id="0" name="Object to create">Good</param>
-                                    <param id="1" name="Layer">1</param>
+                                    <param id="1" name="Layer">2</param>
                                     <param id="2" name="X">4000</param>
                                     <param id="3" name="Y">980</param>
                                 </action>
@@ -654,7 +666,7 @@
                         </event-block>
                         <event-block sid="1422657045890775">
                             <conditions>
-                                <condition id="-14" name="Compare variable" sid="2755838775660215" type="System">
+                                <condition disabled="1" id="-14" name="Compare variable" sid="2755838775660215" type="System">
                                     <param id="0" name="Variable">GoodDirection</param>
                                     <param id="1" name="Comparison">0</param>
                                     <param id="2" name="Value">1</param>
@@ -663,7 +675,7 @@
                             <actions>
                                 <action id="-3" name="Create object" sid="7413648332623137" type="System">
                                     <param id="0" name="Object to create">Good</param>
-                                    <param id="1" name="Layer">1</param>
+                                    <param id="1" name="Layer">2</param>
                                     <param id="2" name="X">0</param>
                                     <param id="3" name="Y">980</param>
                                 </action>
@@ -709,23 +721,6 @@
                         <action id="-11" name="Add to" sid="7456144121714209" type="Actor">
                             <param id="0" name="Instance variable">Anger</param>
                             <param id="1" name="Value">-100</param>
-                        </action>
-                    </actions>
-                </event-block>
-                <event-block sid="1362536351896639">
-                    <conditions>
-                        <condition id="-6" name="Every X seconds" sid="6814354523348008" type="System">
-                            <param id="0" name="Interval (seconds)">1.0</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="-9" name="Set value" sid="7984454661718477" type="System">
-                            <param id="0" name="Variable">GoodRandom</param>
-                            <param id="1" name="Value">random(2)</param>
-                        </action>
-                        <action id="-9" name="Set value" sid="4924256105424104" type="System">
-                            <param id="0" name="Variable">GoodDirection</param>
-                            <param id="1" name="Value">GoodRandom</param>
                         </action>
                     </actions>
                 </event-block>
