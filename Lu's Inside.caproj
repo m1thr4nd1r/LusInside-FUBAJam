@@ -18,18 +18,19 @@
     </used-plugins>
     <used-behaviors>
         <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
-        <behavior author="Scirra" id="solid" version="1">Solid</behavior>
         <behavior author="Scirra" id="Platform" version="1">Platform</behavior>
         <behavior author="Scirra" id="Timer" version="1">Timer</behavior>
         <behavior author="Scirra" id="bound" version="1">Bound to layout</behavior>
+        <behavior author="Scirra" id="scrollto" version="1">Scroll To</behavior>
+        <behavior author="Scirra" id="solid" version="1">Solid</behavior>
     </used-behaviors>
     <used-effects />
     <configurations>
         <configuration exporter-descname="HTML5" exporter-id="html5" name="HTML5" />
     </configurations>
     <window-size>
-        <width>1280</width>
-        <height>1024</height>
+        <width>640</width>
+        <height>480</height>
     </window-size>
     <pixel-rounding>0</pixel-rounding>
     <first-layout>Main Game</first-layout>
@@ -70,8 +71,8 @@
                 <behavior-type name="BoundToLayout" sid="8890056759728429">
                     <behavior id="bound" />
                 </behavior-type>
-                <behavior-type name="Solid" sid="2901725537392228">
-                    <behavior id="solid" />
+                <behavior-type name="ScrollTo" sid="3990091088830354">
+                    <behavior id="scrollto" />
                 </behavior-type>
             </behaviors>
             <animation-folder expanded="1">
@@ -186,7 +187,17 @@
                         </collision-poly>
                     </frame>
                 </animation>
-                <animation framecount="1" loop="1" name="DefaultAnger" pingpong="0" repeatcount="1" repeatto="0" sid="8201114811936464" speed="5">
+                <animation framecount="2" loop="1" name="DefaultAnger" pingpong="0" repeatcount="1" repeatto="0" sid="8201114811936464" speed="5">
+                    <frame duration="1" hotspotX="0.506667" hotspotY="0.504">
+                        <collision-poly>
+                            <point x="0.386666" y="0.504" />
+                            <point x="0.386666" y="0.168" />
+                            <point x="0.733333" y="0.168" />
+                            <point x="0.733333" y="0.968" />
+                            <point x="0.2" y="0.968" />
+                            <point x="0.2" y="0.504" />
+                        </collision-poly>
+                    </frame>
                     <frame duration="1" hotspotX="0.506667" hotspotY="0.504">
                         <collision-poly>
                             <point x="0.386666" y="0.504" />
@@ -249,8 +260,31 @@
                         </collision-poly>
                     </frame>
                 </animation>
-                <animation framecount="1" loop="0" name="ChattingAnger" pingpong="0" repeatcount="1" repeatto="0" sid="9479184025957436" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                <animation framecount="2" loop="1" name="ChattingAnger" pingpong="0" repeatcount="1" repeatto="0" sid="9479184025957436" speed="6">
+                    <frame duration="1" hotspotX="0.506667" hotspotY="0.504">
+                        <collision-poly>
+                            <point x="0.28" y="0.168" />
+                            <point x="0.493333" y="0.072" />
+                            <point x="0.72" y="0.168" />
+                            <point x="0.76" y="0.496" />
+                            <point x="0.706667" y="0.824" />
+                            <point x="0.493333" y="0.928" />
+                            <point x="0.146667" y="0.912" />
+                            <point x="0.0533333" y="0.496" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.506667" hotspotY="0.504">
+                        <collision-poly>
+                            <point x="0.333333" y="0.2" />
+                            <point x="0.493333" y="0.12" />
+                            <point x="0.706667" y="0.176" />
+                            <point x="0.8" y="0.496" />
+                            <point x="0.693333" y="0.816" />
+                            <point x="0.493333" y="0.992" />
+                            <point x="0.146667" y="0.912" />
+                            <point x="0.0266667" y="0.496" />
+                        </collision-poly>
+                    </frame>
                 </animation>
                 <animation framecount="5" loop="1" name="WalkingAnger" pingpong="0" repeatcount="1" repeatto="0" sid="223029538868589" speed="5">
                     <frame duration="1" hotspotX="0.506667" hotspotY="0.504">
@@ -374,6 +408,10 @@
                     </frame>
                 </animation>
             </animation-folder>
+        </object-type>
+        <object-type name="TiledBackground" sid="7752129088492135">
+            <plugin id="TiledBg" />
+            <texture />
         </object-type>
     </object-folder>
     <families />
