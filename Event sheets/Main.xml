@@ -3,6 +3,7 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Main</name>
     <events>
+        <variable constant="0" name="GariDirection" sid="1808521070556231" static="0" type="number">0</variable>
         <variable constant="0" name="GoodDirection" sid="2830185868740483" static="0" type="number">0</variable>
         <variable constant="0" name="DogRespawnSide" sid="1584902754791878" static="0" type="number">0</variable>
         <event-block sid="4285507118698778">
@@ -319,7 +320,7 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group collapsed="1" description="" sid="5214820561577503" title="WalkingAnger">
+        <event-group description="" sid="5214820561577503" title="WalkingAnger">
             <sub-events>
                 <event-block sid="9544408382890321">
                     <conditions>
@@ -348,7 +349,7 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group collapsed="1" description="" sid="1280312278582618" title="Default Anger">
+        <event-group description="" sid="1280312278582618" title="Default Anger">
             <sub-events>
                 <event-block sid="3809037596564084">
                     <conditions>
@@ -368,7 +369,7 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group collapsed="1" description="" sid="6137471746492435" title="Jumping Anger">
+        <event-group description="" sid="6137471746492435" title="Jumping Anger">
             <sub-events>
                 <event-block sid="6443836906405993">
                     <conditions>
@@ -406,7 +407,7 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group collapsed="1" description="" sid="9312313597302685" title="Set Mirroed">
+        <event-group description="" sid="9312313597302685" title="Set Mirroed">
             <sub-events>
                 <event-block sid="4730089856391912">
                     <conditions>
@@ -882,6 +883,125 @@
                             <param id="0" name="Instance variable">Anger</param>
                             <param id="1" name="Value">-100</param>
                         </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="7965155378939462" title="Gari">
+            <sub-events>
+                <event-block sid="5847450012836304">
+                    <conditions>
+                        <condition id="-4" name="Is outside layout" sid="783459836286117" type="Good" />
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="9240647968493626" type="Good" />
+                    </actions>
+                </event-block>
+                <event-block sid="4440526756981229">
+                    <conditions>
+                        <condition id="-6" name="Every X seconds" sid="1047897733492471" type="System">
+                            <param id="0" name="Interval (seconds)">2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="5911487090562111" type="System">
+                            <param id="0" name="Variable">GariDirection</param>
+                            <param id="1" name="Value">int(random(2))</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="6775238247191939">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="6449119229005622" type="System">
+                                    <param id="0" name="Variable">GariDirection</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Create object" sid="8102777329640797" type="System">
+                                    <param id="0" name="Object to create">gari</param>
+                                    <param id="1" name="Layer">2</param>
+                                    <param id="2" name="X">4000</param>
+                                    <param id="3" name="Y">957</param>
+                                </action>
+                                <action behavior="Bullet" id="3" name="Set angle of motion" sid="7572098777332031" type="Good">
+                                    <param id="0" name="Angle">180</param>
+                                </action>
+                                <action id="8" name="Set flipped" sid="7766150998525233" type="Good">
+                                    <param id="0" name="State">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="1422657045890775">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="2755838775660215" type="System">
+                                    <param id="0" name="Variable">GariDirection</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Create object" sid="7413648332623137" type="System">
+                                    <param id="0" name="Object to create">gari</param>
+                                    <param id="1" name="Layer">2</param>
+                                    <param id="2" name="X">0</param>
+                                    <param id="3" name="Y">957</param>
+                                </action>
+                                <action behavior="Bullet" id="3" name="Set angle of motion" sid="3001586148835313" type="Good">
+                                    <param id="0" name="Angle">0</param>
+                                </action>
+                                <action id="8" name="Set flipped" sid="6239541139541757" type="Good">
+                                    <param id="0" name="State">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="4044619875452584">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="8649094925695995" type="Good">
+                            <param id="0" name="Object">speech</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="3409647616951669" type="Actor">
+                            <param id="0" name="Instance variable">Anger</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-11" name="Add to" sid="7626290571443184" type="Actor">
+                            <param id="0" name="Instance variable">Anger</param>
+                            <param id="1" name="Value">-200</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="2115336668290507">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="8070929230859565" type="Good">
+                            <param id="0" name="Object">speech</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="2348386148467622" type="Actor">
+                            <param id="0" name="Instance variable">Anger</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-11" name="Add to" sid="7456144121714209" type="Actor">
+                            <param id="0" name="Instance variable">Anger</param>
+                            <param id="1" name="Value">-100</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="9238527035331738">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="7347883218709831" type="gari">
+                            <param id="0" name="Object">Poop</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="8209580868997362" type="Poop" />
                     </actions>
                 </event-block>
             </sub-events>
