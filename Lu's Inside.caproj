@@ -10,8 +10,9 @@
     <unique-id>vd288e3ogx3t</unique-id>
     <saved-with-version>15802</saved-with-version>
     <used-plugins>
-        <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
         <plugin author="Scirra" id="Audio" version="1">Audio</plugin>
+        <plugin author="Scirra" id="Button" version="1">Button</plugin>
+        <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
         <plugin author="Scirra" id="Text" version="1">Text</plugin>
         <plugin author="Scirra" id="TextBox" version="1">Text box</plugin>
@@ -606,13 +607,29 @@
                 </animation>
             </animation-folder>
         </object-type>
+        <object-type name="Sprite5" sid="6324619411695061">
+            <plugin id="Sprite" />
+            <animation-folder expanded="1">
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="3788197628100841" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Button" sid="7212970643438196">
+            <plugin id="Button" />
+        </object-type>
+        <object-type name="Text2" sid="9094508190992878">
+            <plugin id="Text" />
+        </object-type>
     </object-folder>
     <families />
     <layout-folder expanded="1">
         <layout>Main Game.xml</layout>
+        <layout>Menu.xml</layout>
     </layout-folder>
     <event-folder expanded="1">
         <event-sheet>Main.xml</event-sheet>
+        <event-sheet>Menu.xml</event-sheet>
     </event-folder>
     <global-instances>
         <global-instance type="Keyboard" uid="2" />
