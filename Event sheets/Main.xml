@@ -475,15 +475,7 @@
                     <param id="0" name="Object">Sprite</param>
                 </condition>
             </conditions>
-            <actions>
-                <action id="-2" name="Go to layout" sid="7701579516470534" type="System">
-                    <param id="0" name="Layout">Cena1</param>
-                </action>
-                <action id="-9" name="Set value" sid="3171882751213043" type="System">
-                    <param id="0" name="Variable">GenerateCena1</param>
-                    <param id="1" name="Value">1</param>
-                </action>
-            </actions>
+            <actions />
         </event-block>
     </events>
 </c2eventsheet>

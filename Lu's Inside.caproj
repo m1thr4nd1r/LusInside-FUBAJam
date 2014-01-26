@@ -500,11 +500,9 @@
     <families />
     <layout-folder expanded="1">
         <layout>Main Game.xml</layout>
-        <layout>Cena1.xml</layout>
     </layout-folder>
     <event-folder expanded="1">
         <event-sheet>Main.xml</event-sheet>
-        <event-sheet>Event1.xml</event-sheet>
     </event-folder>
     <global-instances>
         <global-instance type="Keyboard" uid="2" />
