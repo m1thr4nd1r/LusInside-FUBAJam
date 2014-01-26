@@ -662,10 +662,13 @@
                                     <param id="0" name="Object to create">Good</param>
                                     <param id="1" name="Layer">2</param>
                                     <param id="2" name="X">4000</param>
-                                    <param id="3" name="Y">980</param>
+                                    <param id="3" name="Y">957</param>
                                 </action>
                                 <action behavior="Bullet" id="3" name="Set angle of motion" sid="7572098777332031" type="Good">
                                     <param id="0" name="Angle">180</param>
+                                </action>
+                                <action id="8" name="Set flipped" sid="7766150998525233" type="Good">
+                                    <param id="0" name="State">0</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -682,10 +685,13 @@
                                     <param id="0" name="Object to create">Good</param>
                                     <param id="1" name="Layer">2</param>
                                     <param id="2" name="X">0</param>
-                                    <param id="3" name="Y">980</param>
+                                    <param id="3" name="Y">957</param>
                                 </action>
                                 <action behavior="Bullet" id="3" name="Set angle of motion" sid="3001586148835313" type="Good">
                                     <param id="0" name="Angle">0</param>
+                                </action>
+                                <action id="8" name="Set flipped" sid="6239541139541757" type="Good">
+                                    <param id="0" name="State">1</param>
                                 </action>
                             </actions>
                         </event-block>

@@ -636,11 +636,11 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>2018</x>
-                        <y>1345</y>
+                        <x>1979</x>
+                        <y>1322</y>
                         <z>0</z>
-                        <width>79</width>
-                        <height>79</height>
+                        <width>64</width>
+                        <height>108</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
                         <hotspotY>0.5</hotspotY>
