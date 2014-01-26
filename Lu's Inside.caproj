@@ -11,6 +11,7 @@
     <saved-with-version>15802</saved-with-version>
     <used-plugins>
         <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
+        <plugin author="Scirra" id="Particles" version="1">Particles</plugin>
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
         <plugin author="Scirra" id="Text" version="1">Text</plugin>
         <plugin author="Scirra" id="TextBox" version="1">Text box</plugin>
@@ -413,13 +414,97 @@
             <plugin id="TiledBg" />
             <texture />
         </object-type>
+        <object-type name="Sprite1" sid="2328931445249453">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Solid" sid="7125967586313472">
+                    <behavior id="solid" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder expanded="1">
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="9701590777260213" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Sprite2" sid="4680401024434326">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Solid" sid="7761171239784767">
+                    <behavior id="solid" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder expanded="1">
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="219847352361669" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Sprite3" sid="1842709480760506">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Solid" sid="9624387259496424">
+                    <behavior id="solid" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder expanded="1">
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="3141391894399832" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Sprite4" sid="1593987545326381">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Solid" sid="8046546302116038">
+                    <behavior id="solid" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder expanded="1">
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="6126994791336416" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Sprite5" sid="2590288171626042">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Solid" sid="2363601174100689">
+                    <behavior id="solid" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder expanded="1">
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="7594101705917385" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Particles" sid="9309027480776833">
+            <plugin id="Particles" />
+            <texture />
+        </object-type>
+        <object-type name="Sprite" sid="1141008845974851">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Solid" sid="2336454934809704">
+                    <behavior id="solid" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder expanded="1">
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="2112215302474518" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
     </object-folder>
     <families />
     <layout-folder expanded="1">
         <layout>Main Game.xml</layout>
+        <layout>Cena1.xml</layout>
     </layout-folder>
     <event-folder expanded="1">
         <event-sheet>Main.xml</event-sheet>
+        <event-sheet>Event1.xml</event-sheet>
     </event-folder>
     <global-instances>
         <global-instance type="Keyboard" uid="2" />
