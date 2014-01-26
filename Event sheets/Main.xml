@@ -640,13 +640,13 @@
                     <actions>
                         <action id="-9" name="Set value" sid="5911487090562111" type="System">
                             <param id="0" name="Variable">GoodDirection</param>
-                            <param id="1" name="Value">random(2)</param>
+                            <param id="1" name="Value">int(random(2))</param>
                         </action>
                     </actions>
                     <sub-events>
                         <event-block sid="6775238247191939">
                             <conditions>
-                                <condition disabled="1" id="-14" name="Compare variable" sid="6449119229005622" type="System">
+                                <condition id="-14" name="Compare variable" sid="6449119229005622" type="System">
                                     <param id="0" name="Variable">GoodDirection</param>
                                     <param id="1" name="Comparison">0</param>
                                     <param id="2" name="Value">0</param>
@@ -666,7 +666,7 @@
                         </event-block>
                         <event-block sid="1422657045890775">
                             <conditions>
-                                <condition disabled="1" id="-14" name="Compare variable" sid="2755838775660215" type="System">
+                                <condition id="-14" name="Compare variable" sid="2755838775660215" type="System">
                                     <param id="0" name="Variable">GoodDirection</param>
                                     <param id="1" name="Comparison">0</param>
                                     <param id="2" name="Value">1</param>
