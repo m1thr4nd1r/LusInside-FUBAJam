@@ -10,22 +10,22 @@
     <unique-id>vd288e3ogx3t</unique-id>
     <saved-with-version>15802</saved-with-version>
     <used-plugins>
-        <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
-        <plugin author="Scirra" id="TextBox" version="1">Text box</plugin>
-        <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
         <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
-        <plugin author="Scirra" id="Text" version="1">Text</plugin>
         <plugin author="Scirra" id="Button" version="1">Button</plugin>
         <plugin author="Scirra" id="Audio" version="1">Audio</plugin>
+        <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
+        <plugin author="Scirra" id="Text" version="1">Text</plugin>
+        <plugin author="Scirra" id="TextBox" version="1">Text box</plugin>
+        <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
     </used-plugins>
     <used-behaviors>
         <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
         <behavior author="Scirra" id="Fade" version="1">Fade</behavior>
-        <behavior author="Scirra" id="scrollto" version="1">Scroll To</behavior>
-        <behavior author="Scirra" id="solid" version="1">Solid</behavior>
         <behavior author="Scirra" id="Platform" version="1">Platform</behavior>
         <behavior author="Scirra" id="Timer" version="1">Timer</behavior>
         <behavior author="Scirra" id="bound" version="1">Bound to layout</behavior>
+        <behavior author="Scirra" id="scrollto" version="1">Scroll To</behavior>
+        <behavior author="Scirra" id="solid" version="1">Solid</behavior>
     </used-behaviors>
     <used-effects />
     <configurations>
@@ -51,7 +51,7 @@
         <prop name="Sampling">Linear</prop>
         <prop name="Use high-DPI display">Yes</prop>
     </configuration-settings>
-    <object-folder expanded="0">
+    <object-folder expanded="1">
         <object-type name="Keyboard" sid="4194083978207031">
             <plugin id="Keyboard" />
         </object-type>
@@ -315,12 +315,12 @@
                             <point x="0.133333" y="1" />
                         </collision-poly>
                     </frame>
-                    <frame duration="1" hotspotX="0.506667" hotspotY="0.448">
+                    <frame duration="1" hotspotX="0.506667" hotspotY="0.508065">
                         <collision-poly>
-                            <point x="0.131579" y="0.105357" />
-                            <point x="0.789474" y="0.105357" />
-                            <point x="0.789474" y="0.991071" />
-                            <point x="0.131579" y="0.991071" />
+                            <point x="0.133333" y="0.2" />
+                            <point x="0.8" y="0.2" />
+                            <point x="0.8" y="1" />
+                            <point x="0.133333" y="1" />
                         </collision-poly>
                     </frame>
                     <frame duration="1" hotspotX="0.506667" hotspotY="0.504">
@@ -519,9 +519,15 @@
         </object-type>
         <object-type name="Bully" sid="1842709480760506">
             <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="life" sid="8413763570061869" type="number" />
+            </instance-variables>
             <behaviors>
                 <behavior-type name="Platform" sid="8003807784450312">
                     <behavior id="Platform" />
+                </behavior-type>
+                <behavior-type name="Solid" sid="8400974050704041">
+                    <behavior id="solid" />
                 </behavior-type>
             </behaviors>
             <animation-folder expanded="1">
@@ -671,16 +677,57 @@
         <object-type name="Text2" sid="9094508190992878">
             <plugin id="Text" />
         </object-type>
-        <object-type name="gari" sid="8400173389353968">
+        <object-type name="bola" sid="4229680560427411">
             <plugin id="Sprite" />
             <behaviors>
-                <behavior-type name="Bullet" sid="6847424164317614">
+                <behavior-type name="Bullet" sid="2728983103105145">
+                    <behavior id="Bullet" />
+                </behavior-type>
+                <behavior-type name="Fade" sid="1544050470896544">
+                    <behavior id="Fade" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder expanded="1">
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="4324498919508028" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                        <collision-poly>
+                            <point x="0.1875" y="0.1875" />
+                            <point x="0.5" y="0.03125" />
+                            <point x="0.8125" y="0.1875" />
+                            <point x="0.96875" y="0.5" />
+                            <point x="0.8125" y="0.8125" />
+                            <point x="0.5" y="0.96875" />
+                            <point x="0.21875" y="0.78125" />
+                            <point x="0.125" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="bola2" sid="1707549689742717">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Fade" sid="3254738920392481">
+                    <behavior id="Fade" />
+                </behavior-type>
+                <behavior-type name="Bullet" sid="8428164930237137">
                     <behavior id="Bullet" />
                 </behavior-type>
             </behaviors>
             <animation-folder expanded="1">
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="1117251914251247" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="721758344717392" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                        <collision-poly>
+                            <point x="0.1875" y="0.1875" />
+                            <point x="0.5" y="0.03125" />
+                            <point x="0.8125" y="0.1875" />
+                            <point x="0.96875" y="0.5" />
+                            <point x="0.8125" y="0.8125" />
+                            <point x="0.5" y="0.96875" />
+                            <point x="0.21875" y="0.78125" />
+                            <point x="0.125" y="0.5" />
+                        </collision-poly>
+                    </frame>
                 </animation>
             </animation-folder>
         </object-type>
@@ -713,14 +760,7 @@
         </global-instance>
     </global-instances>
     <sounds-folder expanded="1" />
-    <music-folder expanded="1">
-        <file name="Atari - Leo kimahri.m4a" />
-        <file name="Atari - Leo kimahri.ogg" />
-        <file name="Atari - Leo kimahri.wav" />
-        <file name="Mulher gritar.ogg" />
-        <file name="Mulher gritar2.m4a" />
-        <file name="Mulher gritar2.wav" />
-    </music-folder>
+    <music-folder expanded="1" />
     <files-folder expanded="1">
         <file-folder expanded="0" name="Icons">
             <file name="icon-16.png" />
