@@ -3,6 +3,8 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Main</name>
     <events>
+        <variable constant="0" name="GoodRandom" sid="5416156318814763" static="0" type="number">0</variable>
+        <variable constant="0" name="GoodDirection" sid="2830185868740483" static="0" type="number">0</variable>
         <variable constant="0" name="DogRespawnSide" sid="1584902754791878" static="0" type="number">0</variable>
         <event-block sid="4285507118698778">
             <conditions>
@@ -254,7 +256,7 @@
                     <conditions>
                         <condition id="-7" name="Compare instance variable" sid="4335508781248989" type="Actor">
                             <param id="0" name="Instance variable">Anger</param>
-                            <param id="1" name="Comparison">2</param>
+                            <param id="1" name="Comparison">3</param>
                             <param id="2" name="Value">0</param>
                         </condition>
                     </conditions>
@@ -285,6 +287,14 @@
                                     <param id="0" name="Object">speech</param>
                                     <param id="1" name="Layer">2</param>
                                     <param id="2" name="Image point">0</param>
+                                </action>
+                                <action id="0" name="Spawn another object" sid="118398635681563" type="Actor">
+                                    <param id="0" name="Object">Text</param>
+                                    <param id="1" name="Layer">2</param>
+                                    <param id="2" name="Image point">2</param>
+                                </action>
+                                <action id="0" name="Set text" sid="7596910042180855" type="Text">
+                                    <param id="0" name="Text">&quot;Oi, tudo bem?&quot;</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -443,169 +453,283 @@
                 <action id="-9" name="Destroy" sid="8611589881171178" type="cookie" />
             </actions>
         </event-block>
-        <event-block sid="9297700467970052">
-            <conditions>
-                <condition id="-6" name="Every X seconds" sid="1065635974866973" type="System">
-                    <param id="0" name="Interval (seconds)">10</param>
-                </condition>
-                <condition id="-14" name="Compare variable" sid="520533657935069" type="System">
-                    <param id="0" name="Variable">DogRespawnSide</param>
-                    <param id="1" name="Comparison">0</param>
-                    <param id="2" name="Value">0</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="-3" name="Create object" sid="4429648544907397" type="System">
-                    <param id="0" name="Object to create">Doge</param>
-                    <param id="1" name="Layer">1</param>
-                    <param id="2" name="X">0</param>
-                    <param id="3" name="Y">980</param>
-                </action>
-                <action id="-9" name="Set value" sid="2729293861439731" type="System">
-                    <param id="0" name="Variable">DogRespawnSide</param>
-                    <param id="1" name="Value">1</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block sid="585892268890532">
-            <conditions>
-                <condition id="-6" name="Every X seconds" sid="5251523176072871" type="System">
-                    <param id="0" name="Interval (seconds)">10</param>
-                </condition>
-                <condition id="-14" name="Compare variable" sid="791873321144787" type="System">
-                    <param id="0" name="Variable">DogRespawnSide</param>
-                    <param id="1" name="Comparison">0</param>
-                    <param id="2" name="Value">1</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="-3" name="Create object" sid="4817389611422496" type="System">
-                    <param id="0" name="Object to create">Doge</param>
-                    <param id="1" name="Layer">1</param>
-                    <param id="2" name="X">4000</param>
-                    <param id="3" name="Y">980</param>
-                </action>
-                <action id="-9" name="Set value" sid="8180476900578044" type="System">
-                    <param id="0" name="Variable">DogRespawnSide</param>
-                    <param id="1" name="Value">0</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block sid="3639407812370809">
-            <conditions>
-                <condition id="-1" name="Compare X" sid="1863887585626238" type="Doge">
-                    <param id="0" name="Comparison">4</param>
-                    <param id="1" name="X co-ordinate">actor.X+50</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action behavior="Platform" id="7" name="Simulate control" sid="4070204204724036" type="Doge">
-                    <param id="0" name="Control">0</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block sid="8301451909132702">
-            <conditions>
-                <condition id="-1" name="Compare X" sid="8706586270148753" type="Doge">
-                    <param id="0" name="Comparison">2</param>
-                    <param id="1" name="X co-ordinate">actor.X-50</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action behavior="Platform" id="7" name="Simulate control" sid="6343583351854115" type="Doge">
-                    <param id="0" name="Control">1</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block sid="6591455754404593">
-            <conditions>
-                <condition id="0" name="On collision with another object" sid="8081318793540036" type="cookie">
-                    <param id="0" name="Object">Doge</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="-9" name="Destroy" sid="4879099137890827" type="cookie" />
-                <action id="-9" name="Destroy" sid="3073333255828802" type="Doge" />
-                <action id="-11" name="Add to" sid="5897431713473973" type="Actor">
-                    <param id="0" name="Instance variable">Anger</param>
-                    <param id="1" name="Value">500</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block sid="3301503151513471">
-            <conditions>
-                <condition id="-1" name="Every tick" sid="881200801665447" type="System" />
-            </conditions>
-            <actions>
-                <action id="-11" name="Add to" sid="1060320029098044" type="Doge">
-                    <param id="0" name="Instance variable">PoopTime</param>
-                    <param id="1" name="Value">-1</param>
-                </action>
-                <action id="-11" name="Add to" sid="3842048754622143" type="Poop">
-                    <param id="0" name="Instance variable">fade</param>
-                    <param id="1" name="Value">-1</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block sid="212704108871135">
-            <conditions>
-                <condition id="-7" name="Compare instance variable" sid="8031744037670517" type="Doge">
-                    <param id="0" name="Instance variable">PoopTime</param>
-                    <param id="1" name="Comparison">3</param>
-                    <param id="2" name="Value">0</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="-10" name="Set value" sid="7812050119186623" type="Doge">
-                    <param id="0" name="Instance variable">PoopTime</param>
-                    <param id="1" name="Value">random(1000)+500</param>
-                </action>
-                <action id="0" name="Spawn another object" sid="5102845518647119" type="Doge">
-                    <param id="0" name="Object">Poop</param>
-                    <param id="1" name="Layer">1</param>
-                    <param id="2" name="Image point">0</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block sid="972320713111533">
-            <conditions>
-                <condition id="-7" name="Compare instance variable" sid="5195951583192535" type="Poop">
-                    <param id="0" name="Instance variable">fade</param>
-                    <param id="1" name="Comparison">3</param>
-                    <param id="2" name="Value">0</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="-9" name="Destroy" sid="2569053896638681" type="Poop" />
-            </actions>
-        </event-block>
-        <event-block sid="9562593650316729">
-            <conditions>
-                <condition id="0" name="On collision with another object" sid="5904678467694041" type="Actor">
-                    <param id="0" name="Object">Poop</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="-9" name="Destroy" sid="9760297739790207" type="Poop" />
-                <action id="-11" name="Add to" sid="9817809860203103" type="Actor">
-                    <param id="0" name="Instance variable">Anger</param>
-                    <param id="1" name="Value">250</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block sid="4683979874109598">
-            <conditions>
-                <condition id="0" name="On collision with another object" sid="269667960080432" type="Doge">
-                    <param id="0" name="Object">speech</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="-9" name="Destroy" sid="6870990749437896" type="Doge" />
-                <action id="-11" name="Add to" sid="956130893618814" type="Actor">
-                    <param id="0" name="Instance variable">Anger</param>
-                    <param id="1" name="Value">-250</param>
-                </action>
-            </actions>
-        </event-block>
+        <event-group description="" sid="8026903565640887" title="Doge">
+            <sub-events>
+                <event-block sid="9297700467970052">
+                    <conditions>
+                        <condition id="-6" name="Every X seconds" sid="1065635974866973" type="System">
+                            <param id="0" name="Interval (seconds)">10</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="520533657935069" type="System">
+                            <param id="0" name="Variable">DogRespawnSide</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="4429648544907397" type="System">
+                            <param id="0" name="Object to create">Doge</param>
+                            <param id="1" name="Layer">1</param>
+                            <param id="2" name="X">0</param>
+                            <param id="3" name="Y">980</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="2729293861439731" type="System">
+                            <param id="0" name="Variable">DogRespawnSide</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="585892268890532">
+                    <conditions>
+                        <condition id="-6" name="Every X seconds" sid="5251523176072871" type="System">
+                            <param id="0" name="Interval (seconds)">10</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="791873321144787" type="System">
+                            <param id="0" name="Variable">DogRespawnSide</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="4817389611422496" type="System">
+                            <param id="0" name="Object to create">Doge</param>
+                            <param id="1" name="Layer">1</param>
+                            <param id="2" name="X">4000</param>
+                            <param id="3" name="Y">980</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="8180476900578044" type="System">
+                            <param id="0" name="Variable">DogRespawnSide</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="4112044564546383">
+                    <conditions>
+                        <condition id="-1" name="Compare X" sid="2427792127078301" type="Doge">
+                            <param id="0" name="Comparison">4</param>
+                            <param id="1" name="X co-ordinate">actor.X+50</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Platform" id="7" name="Simulate control" sid="4955471344077602" type="Doge">
+                            <param id="0" name="Control">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="6466868268972258">
+                    <conditions>
+                        <condition id="-1" name="Compare X" sid="6458033035244768" type="Doge">
+                            <param id="0" name="Comparison">2</param>
+                            <param id="1" name="X co-ordinate">actor.X-50</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Platform" id="7" name="Simulate control" sid="5482795827811738" type="Doge">
+                            <param id="0" name="Control">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="253557862541132">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="7536532561719228" type="cookie">
+                            <param id="0" name="Object">Doge</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="2302483539789377" type="cookie" />
+                        <action id="-9" name="Destroy" sid="5307801207149849" type="Doge" />
+                        <action id="-11" name="Add to" sid="308118714930871" type="Actor">
+                            <param id="0" name="Instance variable">Anger</param>
+                            <param id="1" name="Value">500</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="8358524927950588">
+                    <conditions>
+                        <condition id="-1" name="Every tick" sid="4827742038574671" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-11" name="Add to" sid="6909031606643583" type="Doge">
+                            <param id="0" name="Instance variable">PoopTime</param>
+                            <param id="1" name="Value">-1</param>
+                        </action>
+                        <action id="-11" name="Add to" sid="9336916023428103" type="Poop">
+                            <param id="0" name="Instance variable">fade</param>
+                            <param id="1" name="Value">-1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="6275083636103192">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="8009388938499472" type="Doge">
+                            <param id="0" name="Instance variable">PoopTime</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="5570891712718534" type="Doge">
+                            <param id="0" name="Instance variable">PoopTime</param>
+                            <param id="1" name="Value">random(1000)+500</param>
+                        </action>
+                        <action id="0" name="Spawn another object" sid="874825405549381" type="Doge">
+                            <param id="0" name="Object">Poop</param>
+                            <param id="1" name="Layer">1</param>
+                            <param id="2" name="Image point">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="8557868804048784">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="9069460548617542" type="Poop">
+                            <param id="0" name="Instance variable">fade</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="5590444691342396" type="Poop" />
+                    </actions>
+                </event-block>
+                <event-block sid="8851801821472866">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="1983482871252444" type="Actor">
+                            <param id="0" name="Object">Poop</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="9345500746380422" type="Poop" />
+                        <action id="-11" name="Add to" sid="2336431513919003" type="Actor">
+                            <param id="0" name="Instance variable">Anger</param>
+                            <param id="1" name="Value">250</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="1137097638446313">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="8210256384138071" type="Doge">
+                            <param id="0" name="Object">speech</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="9361799730966607" type="Doge" />
+                        <action id="-11" name="Add to" sid="9446512587884494" type="Actor">
+                            <param id="0" name="Instance variable">Anger</param>
+                            <param id="1" name="Value">-250</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="8136670134473068" title="Bully" />
+        <event-group description="" sid="523201074517911" title="Good">
+            <sub-events>
+                <event-block sid="4440526756981229">
+                    <conditions>
+                        <condition id="-6" name="Every X seconds" sid="1047897733492471" type="System">
+                            <param id="0" name="Interval (seconds)">5</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="6775238247191939">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="6449119229005622" type="System">
+                                    <param id="0" name="Variable">GoodDirection</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Create object" sid="8102777329640797" type="System">
+                                    <param id="0" name="Object to create">Good</param>
+                                    <param id="1" name="Layer">1</param>
+                                    <param id="2" name="X">4000</param>
+                                    <param id="3" name="Y">980</param>
+                                </action>
+                                <action behavior="Bullet" id="3" name="Set angle of motion" sid="7572098777332031" type="Good">
+                                    <param id="0" name="Angle">180</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="1422657045890775">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="2755838775660215" type="System">
+                                    <param id="0" name="Variable">GoodDirection</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Create object" sid="7413648332623137" type="System">
+                                    <param id="0" name="Object to create">Good</param>
+                                    <param id="1" name="Layer">1</param>
+                                    <param id="2" name="X">0</param>
+                                    <param id="3" name="Y">980</param>
+                                </action>
+                                <action behavior="Bullet" id="3" name="Set angle of motion" sid="3001586148835313" type="Good">
+                                    <param id="0" name="Angle">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="4044619875452584">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="8649094925695995" type="Good">
+                            <param id="0" name="Object">speech</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="3409647616951669" type="Actor">
+                            <param id="0" name="Instance variable">Anger</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="2205669312449345" type="Good" />
+                        <action id="-11" name="Add to" sid="7626290571443184" type="Actor">
+                            <param id="0" name="Instance variable">Anger</param>
+                            <param id="1" name="Value">-200</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="2115336668290507">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="8070929230859565" type="Good">
+                            <param id="0" name="Object">speech</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="2348386148467622" type="Actor">
+                            <param id="0" name="Instance variable">Anger</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="6682411437662046" type="Good" />
+                        <action id="-11" name="Add to" sid="7456144121714209" type="Actor">
+                            <param id="0" name="Instance variable">Anger</param>
+                            <param id="1" name="Value">-100</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="1362536351896639">
+                    <conditions>
+                        <condition id="-6" name="Every X seconds" sid="6814354523348008" type="System">
+                            <param id="0" name="Interval (seconds)">1.0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="7984454661718477" type="System">
+                            <param id="0" name="Variable">GoodRandom</param>
+                            <param id="1" name="Value">random(2)</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="4924256105424104" type="System">
+                            <param id="0" name="Variable">GoodDirection</param>
+                            <param id="1" name="Value">GoodRandom</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
     </events>
 </c2eventsheet>

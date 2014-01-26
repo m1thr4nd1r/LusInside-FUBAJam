@@ -126,16 +126,17 @@
                         <initial-frame>0</initial-frame>
                         <collisions>Enabled</collisions>
                     </properties>
+                    <instance-variables>
+                        <Direction>0</Direction>
+                    </instance-variables>
                     <behavior-instances>
-                        <behavior-instance type="Platform">
+                        <behavior-instance type="Bullet">
                             <properties>
-                                <max-speed>330</max-speed>
-                                <acceleration>1500</acceleration>
-                                <deceleration>1500</deceleration>
-                                <jump-strength>650</jump-strength>
-                                <gravity>1500</gravity>
-                                <max-fall-speed>1000</max-fall-speed>
-                                <default-controls>No</default-controls>
+                                <speed>400</speed>
+                                <acceleration>0</acceleration>
+                                <gravity>0</gravity>
+                                <bounce-off-solids>No</bounce-off-solids>
+                                <set-angle>Yes</set-angle>
                                 <initial-state>Enabled</initial-state>
                             </properties>
                         </behavior-instance>
@@ -618,8 +619,8 @@
                         <behavior-instance type="Fade">
                             <properties>
                                 <active-at-start>Yes</active-at-start>
-                                <fade-in-time>1</fade-in-time>
-                                <wait-time>1</wait-time>
+                                <fade-in-time>0</fade-in-time>
+                                <wait-time>0</wait-time>
                                 <fade-out-time>1</fade-out-time>
                                 <destroy>After fade out</destroy>
                             </properties>
