@@ -49,7 +49,7 @@
                 </action>
             </actions>
         </event-block>
-        <event-group collapsed="1" description="" sid="6441324882011083" title="Default Normal">
+        <event-group description="" sid="6441324882011083" title="Default Normal">
             <sub-events>
                 <event-block sid="3809037596564084">
                     <conditions>
@@ -75,7 +75,7 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group collapsed="1" description="" sid="1000924135542746" title="Walking Normal">
+        <event-group description="" sid="1000924135542746" title="Walking Normal">
             <sub-events>
                 <event-block sid="4587436122071793">
                     <conditions>
@@ -104,7 +104,7 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group collapsed="1" description="" sid="5896083967327853" title="Jumping Normal">
+        <event-group description="" sid="5896083967327853" title="Jumping Normal">
             <sub-events>
                 <event-block sid="5514104640644861">
                     <conditions>
@@ -142,7 +142,7 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group collapsed="1" description="" sid="834502333519228" title="Attacking Normal">
+        <event-group description="" sid="834502333519228" title="Attacking Normal">
             <sub-events>
                 <event-block sid="2454738931766687">
                     <conditions>
@@ -249,7 +249,7 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group collapsed="1" description="" sid="1696036262724467" title="Chatting Normal">
+        <event-group description="" sid="1696036262724467" title="Chatting Normal">
             <sub-events>
                 <event-block sid="7360892348465864">
                     <conditions>
@@ -319,7 +319,7 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group collapsed="1" description="" sid="5214820561577503" title="WalkingAnger">
+        <event-group description="" sid="5214820561577503" title="WalkingAnger">
             <sub-events>
                 <event-block sid="9544408382890321">
                     <conditions>
@@ -348,7 +348,7 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group collapsed="1" description="" sid="1280312278582618" title="Default Anger">
+        <event-group description="" sid="1280312278582618" title="Default Anger">
             <sub-events>
                 <event-block sid="3809037596564084">
                     <conditions>
@@ -368,7 +368,7 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group collapsed="1" description="" sid="6137471746492435" title="Jumping Anger">
+        <event-group description="" sid="6137471746492435" title="Jumping Anger">
             <sub-events>
                 <event-block sid="6443836906405993">
                     <conditions>
@@ -406,7 +406,7 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group collapsed="1" description="" sid="9312313597302685" title="Set Mirroed">
+        <event-group description="" sid="9312313597302685" title="Set Mirroed">
             <sub-events>
                 <event-block sid="4730089856391912">
                     <conditions>
@@ -452,7 +452,7 @@
                 <action id="-9" name="Destroy" sid="8611589881171178" type="cookie" />
             </actions>
         </event-block>
-        <event-group collapsed="1" description="" sid="8026903565640887" title="Doge">
+        <event-group description="" sid="8026903565640887" title="Doge">
             <sub-events>
                 <event-block sid="9297700467970052">
                     <conditions>
@@ -620,14 +620,9 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group collapsed="1" description="" sid="8136670134473068" title="Bully">
-            <sub-events>
-                <comment>NPC&apos;s que fazem bullying com o jogador</comment>
-            </sub-events>
-        </event-group>
+        <event-group description="" sid="8136670134473068" title="Bully" />
         <event-group description="" sid="523201074517911" title="Good">
             <sub-events>
-                <comment>NPCs do Bem</comment>
                 <event-block sid="5847450012836304">
                     <conditions>
                         <condition id="-4" name="Is outside layout" sid="783459836286117" type="Good" />
@@ -662,10 +657,13 @@
                                     <param id="0" name="Object to create">Good</param>
                                     <param id="1" name="Layer">2</param>
                                     <param id="2" name="X">4000</param>
-                                    <param id="3" name="Y">980</param>
+                                    <param id="3" name="Y">957</param>
                                 </action>
                                 <action behavior="Bullet" id="3" name="Set angle of motion" sid="7572098777332031" type="Good">
                                     <param id="0" name="Angle">180</param>
+                                </action>
+                                <action id="8" name="Set flipped" sid="7766150998525233" type="Good">
+                                    <param id="0" name="State">0</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -682,10 +680,13 @@
                                     <param id="0" name="Object to create">Good</param>
                                     <param id="1" name="Layer">2</param>
                                     <param id="2" name="X">0</param>
-                                    <param id="3" name="Y">980</param>
+                                    <param id="3" name="Y">957</param>
                                 </action>
                                 <action behavior="Bullet" id="3" name="Set angle of motion" sid="3001586148835313" type="Good">
                                     <param id="0" name="Angle">0</param>
+                                </action>
+                                <action id="8" name="Set flipped" sid="6239541139541757" type="Good">
+                                    <param id="0" name="State">1</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -724,155 +725,6 @@
                     <actions>
                         <action id="-9" name="Destroy" sid="6682411437662046" type="Good" />
                         <action id="-11" name="Add to" sid="7456144121714209" type="Actor">
-                            <param id="0" name="Instance variable">Anger</param>
-                            <param id="1" name="Value">-100</param>
-                        </action>
-                    </actions>
-                </event-block>
-            </sub-events>
-        </event-group>
-        <event-group description="" sid="9781582274472341" title="Neutral">
-            <sub-events>
-                <comment>NPC&apos;s neutros ao jogador</comment>
-                <event-block sid="2586786598301746">
-                    <conditions>
-                        <condition id="-4" name="Is outside layout" sid="2934987286885028" type="Neutral" />
-                    </conditions>
-                    <actions>
-                        <action id="-9" name="Destroy" sid="9919275583982989" type="Neutral" />
-                    </actions>
-                </event-block>
-                <event-block sid="1734060888150571">
-                    <conditions>
-                        <condition id="-6" name="Every X seconds" sid="6505731272149455" type="System">
-                            <param id="0" name="Interval (seconds)">8</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="-9" name="Set value" sid="2683424591969233" type="System">
-                            <param id="0" name="Variable">GoodDirection</param>
-                            <param id="1" name="Value">int(random(2))</param>
-                        </action>
-                    </actions>
-                    <sub-events>
-                        <event-block any="1" sid="3154746314151343">
-                            <conditions>
-                                <condition id="-14" name="Compare variable" sid="9032029599477968" type="System">
-                                    <param id="0" name="Variable">GoodDirection</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Value">0</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="-3" name="Create object" sid="8800077019570076" type="System">
-                                    <param id="0" name="Object to create">Neutral</param>
-                                    <param id="1" name="Layer">2</param>
-                                    <param id="2" name="X">((Actor.X + 100) &gt; 0)? Actor.X + 100: 4000</param>
-                                    <param id="3" name="Y">980</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <event-block any="1" sid="2474003125328362">
-                            <conditions>
-                                <condition id="-14" name="Compare variable" sid="8391251131649165" type="System">
-                                    <param id="0" name="Variable">GoodDirection</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Value">1</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="-3" name="Create object" sid="1681291981493712" type="System">
-                                    <param id="0" name="Object to create">Neutral</param>
-                                    <param id="1" name="Layer">2</param>
-                                    <param id="2" name="X">((Actor.X - 100) &lt; 0)? Actor.X - 100: 0</param>
-                                    <param id="3" name="Y">980</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <event-block sid="8655310784738647">
-                            <conditions>
-                                <condition id="-7" name="Compare instance variable" sid="4317374661660447" type="Actor">
-                                    <param id="0" name="Instance variable">Anger</param>
-                                    <param id="1" name="Comparison">3</param>
-                                    <param id="2" name="Value">0</param>
-                                </condition>
-                            </conditions>
-                            <actions />
-                            <sub-events>
-                                <event-block sid="4003861024911765">
-                                    <conditions>
-                                        <condition id="-11" name="For Each" sid="1436917965294802" type="System">
-                                            <param id="0" name="Object">Neutral</param>
-                                        </condition>
-                                    </conditions>
-                                    <actions>
-                                        <action behavior="Bullet" id="3" name="Set angle of motion" sid="3771058192608664" type="Neutral">
-                                            <param id="0" name="Angle">Actor.Angle</param>
-                                        </action>
-                                    </actions>
-                                </event-block>
-                            </sub-events>
-                        </event-block>
-                        <event-block sid="8236944258302657">
-                            <conditions>
-                                <condition id="-22" name="Else" sid="1405644477054965" type="System" />
-                                <condition id="-7" name="Compare instance variable" sid="6561590188202752" type="Actor">
-                                    <param id="0" name="Instance variable">Anger</param>
-                                    <param id="1" name="Comparison">4</param>
-                                    <param id="2" name="Value">0</param>
-                                </condition>
-                            </conditions>
-                            <actions />
-                            <sub-events>
-                                <event-block sid="2671987549504891">
-                                    <conditions>
-                                        <condition id="-11" name="For Each" sid="9581981032948449" type="System">
-                                            <param id="0" name="Object">Neutral</param>
-                                        </condition>
-                                    </conditions>
-                                    <actions>
-                                        <action behavior="Bullet" id="3" name="Set angle of motion" sid="2715262894691878" type="Neutral">
-                                            <param id="0" name="Angle">(int(Actor.Angle / 180)) * 180</param>
-                                        </action>
-                                    </actions>
-                                </event-block>
-                            </sub-events>
-                        </event-block>
-                    </sub-events>
-                </event-block>
-                <event-block sid="6069899937425167">
-                    <conditions>
-                        <condition id="0" name="On collision with another object" sid="8995629313714045" type="Neutral">
-                            <param id="0" name="Object">speech</param>
-                        </condition>
-                        <condition id="-7" name="Compare instance variable" sid="1161037458732039" type="Actor">
-                            <param id="0" name="Instance variable">Anger</param>
-                            <param id="1" name="Comparison">3</param>
-                            <param id="2" name="Value">0</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="-9" name="Destroy" sid="587457995774863" type="Neutral" />
-                        <action id="-11" name="Add to" sid="4650585826325151" type="Actor">
-                            <param id="0" name="Instance variable">Anger</param>
-                            <param id="1" name="Value">-200</param>
-                        </action>
-                    </actions>
-                </event-block>
-                <event-block sid="4125970405536095">
-                    <conditions>
-                        <condition id="0" name="On collision with another object" sid="7429677544296149" type="Neutral">
-                            <param id="0" name="Object">speech</param>
-                        </condition>
-                        <condition id="-7" name="Compare instance variable" sid="4190675568670647" type="Actor">
-                            <param id="0" name="Instance variable">Anger</param>
-                            <param id="1" name="Comparison">4</param>
-                            <param id="2" name="Value">0</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="-9" name="Destroy" sid="7953417245229617" type="Neutral" />
-                        <action id="-11" name="Add to" sid="2044849842775581" type="Actor">
                             <param id="0" name="Instance variable">Anger</param>
                             <param id="1" name="Value">-100</param>
                         </action>

@@ -10,8 +10,15 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <display name="HTML5" />
     </configurations>
     <open-tabs>
+<<<<<<< HEAD
+        <layout active="1">Main Game</layout>
+        <event-sheet>Main</event-sheet>
+=======
         <layout>Main Game</layout>
+        <layout>Menu</layout>
         <event-sheet active="1">Main</event-sheet>
+        <event-sheet>Menu</event-sheet>
+>>>>>>> parent of 994220b... Começando NPC neutro
     </open-tabs>
     <properties>
         <property expanded="1" name="About" />
