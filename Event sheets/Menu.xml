@@ -13,18 +13,5 @@
                 </action>
             </actions>
         </event-block>
-        <event-block sid="2292916219680397">
-            <conditions>
-                <condition id="1" name="Preloads complete" sid="7408311385819615" type="Audio" />
-            </conditions>
-            <actions>
-                <action id="0" name="Play" sid="8195406807561802" type="Audio">
-                    <param id="0" name="Audio file">Atari - Leo kimahri</param>
-                    <param id="2" name="Loop">1</param>
-                    <param id="3" name="Volume">0</param>
-                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
-                </action>
-            </actions>
-        </event-block>
     </events>
 </c2eventsheet>

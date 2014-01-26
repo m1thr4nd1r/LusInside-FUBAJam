@@ -507,6 +507,9 @@
                 <behavior-type name="Platform" sid="5780780726078407">
                     <behavior id="Platform" />
                 </behavior-type>
+                <behavior-type name="Bullet" sid="534435044581647">
+                    <behavior id="Bullet" />
+                </behavior-type>
             </behaviors>
             <animation-folder expanded="1">
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="219847352361669" speed="5">
@@ -728,6 +731,8 @@
                 </animation>
             </animation-folder>
         </object-type>
+=======
+>>>>>>> parent of 88d9d63... pooo
     </object-folder>
     <families />
     <layout-folder expanded="1">

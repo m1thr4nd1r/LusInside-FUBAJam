@@ -50,7 +50,7 @@
                 </action>
             </actions>
         </event-block>
-        <event-group description="" sid="6441324882011083" title="Default Normal">
+        <event-group collapsed="1" description="" sid="6441324882011083" title="Default Normal">
             <sub-events>
                 <event-block sid="3809037596564084">
                     <conditions>
@@ -76,7 +76,7 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group description="" sid="1000924135542746" title="Walking Normal">
+        <event-group collapsed="1" description="" sid="1000924135542746" title="Walking Normal">
             <sub-events>
                 <event-block sid="4587436122071793">
                     <conditions>
@@ -105,7 +105,7 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group description="" sid="5896083967327853" title="Jumping Normal">
+        <event-group collapsed="1" description="" sid="5896083967327853" title="Jumping Normal">
             <sub-events>
                 <event-block sid="5514104640644861">
                     <conditions>
@@ -143,7 +143,7 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group description="" sid="834502333519228" title="Attacking Normal">
+        <event-group collapsed="1" description="" sid="834502333519228" title="Attacking Normal">
             <sub-events>
                 <event-block sid="2454738931766687">
                     <conditions>
@@ -250,7 +250,7 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group description="" sid="1696036262724467" title="Chatting Normal">
+        <event-group collapsed="1" description="" sid="1696036262724467" title="Chatting Normal">
             <sub-events>
                 <event-block sid="7360892348465864">
                     <conditions>
@@ -320,7 +320,7 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group description="" sid="5214820561577503" title="WalkingAnger">
+        <event-group collapsed="1" description="" sid="5214820561577503" title="WalkingAnger">
             <sub-events>
                 <event-block sid="9544408382890321">
                     <conditions>
@@ -349,7 +349,7 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group description="" sid="1280312278582618" title="Default Anger">
+        <event-group collapsed="1" description="" sid="1280312278582618" title="Default Anger">
             <sub-events>
                 <event-block sid="3809037596564084">
                     <conditions>
@@ -369,7 +369,7 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group description="" sid="6137471746492435" title="Jumping Anger">
+        <event-group collapsed="1" description="" sid="6137471746492435" title="Jumping Anger">
             <sub-events>
                 <event-block sid="6443836906405993">
                     <conditions>
@@ -407,7 +407,7 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group description="" sid="9312313597302685" title="Set Mirroed">
+        <event-group collapsed="1" description="" sid="9312313597302685" title="Set Mirroed">
             <sub-events>
                 <event-block sid="4730089856391912">
                     <conditions>
@@ -453,7 +453,7 @@
                 <action id="-9" name="Destroy" sid="8611589881171178" type="cookie" />
             </actions>
         </event-block>
-        <event-group description="" sid="8026903565640887" title="Doge">
+        <event-group collapsed="1" description="" sid="8026903565640887" title="Doge">
             <sub-events>
                 <event-block sid="9297700467970052">
                     <conditions>
@@ -623,6 +623,7 @@
         </event-group>
         <event-group collapsed="1" description="" sid="523201074517911" title="Good">
             <sub-events>
+                <comment>NPCs do Bem</comment>
                 <event-block sid="5847450012836304">
                     <conditions>
                         <condition id="-4" name="Is outside layout" sid="783459836286117" type="Good" />
@@ -1041,6 +1042,5 @@
                 </event-block>
             </sub-events>
         </event-group>
->>>>>>> ef3c6feac91374ba2309a749fd3e0db467476ee0
     </events>
 </c2eventsheet>
