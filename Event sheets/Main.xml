@@ -61,8 +61,8 @@
                         <condition id="2" inverted="1" name="Key is down" sid="6178796343584389" type="Keyboard">
                             <param id="0" name="Key">88 (X)</param>
                         </condition>
-                        <condition id="2" inverted="1" name="Key is down" sid="6959231864199306" type="Keyboard">
-                            <param id="0" name="Key">90 (Z)</param>
+                        <condition id="2" inverted="1" name="Key is down" sid="7051467866357567" type="Keyboard">
+                            <param id="0" name="Key">67 (C)</param>
                         </condition>
                     </conditions>
                     <actions>
@@ -590,6 +590,20 @@
                 <action id="-11" name="Add to" sid="9817809860203103" type="Actor">
                     <param id="0" name="Instance variable">Anger</param>
                     <param id="1" name="Value">250</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="4683979874109598">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="269667960080432" type="Doge">
+                    <param id="0" name="Object">speech</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="6870990749437896" type="Doge" />
+                <action id="-11" name="Add to" sid="956130893618814" type="Actor">
+                    <param id="0" name="Instance variable">Anger</param>
+                    <param id="1" name="Value">-250</param>
                 </action>
             </actions>
         </event-block>

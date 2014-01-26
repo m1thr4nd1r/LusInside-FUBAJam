@@ -146,7 +146,7 @@
                         </collision-poly>
                     </frame>
                 </animation>
-                <animation framecount="3" loop="0" name="Attacking" pingpong="0" repeatcount="1" repeatto="0" sid="1668846554805197" speed="5">
+                <animation framecount="3" loop="0" name="Attacking" pingpong="0" repeatcount="1" repeatto="0" sid="1668846554805197" speed="6">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.50505">
                         <collision-poly>
                             <point x="0.24" y="0.141414" />
