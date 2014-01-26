@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <c2eventsheet>
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
-    <name>Event sheet 1</name>
+    <name>Main</name>
     <events>
         <event-block sid="4285507118698778">
             <conditions>
@@ -32,78 +32,30 @@
                 </action>
             </actions>
         </event-block>
-        <event-block sid="8614862127034356">
+        <event-block sid="9143504447020323">
             <conditions>
-                <condition id="1" name="Is overlapping another object" sid="188112004588793" type="Shoot">
-                    <param id="0" name="Object">LoveNPC</param>
-                </condition>
-                <condition id="-8" name="Is boolean instance variable set" sid="5690168532587923" type="LoveNPC">
-                    <param id="0" name="Instance variable">WaitingInteraction</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="-13" name="Set boolean" sid="1423874741467179" type="LoveNPC">
-                    <param id="0" name="Instance variable">WaitingInteraction</param>
-                    <param id="1" name="Value">0</param>
-                </action>
-                <action id="-11" name="Add to" sid="2305877112352842" type="Actor">
+                <condition id="-7" name="Compare instance variable" sid="7764526112646306" type="Actor">
                     <param id="0" name="Instance variable">Anger</param>
-                    <param id="1" name="Value">1000</param>
-                </action>
-                <action id="-9" name="Destroy" sid="8284565297701531" type="LoveNPC" />
-            </actions>
-        </event-block>
-        <event-block sid="5673795264075252">
-            <conditions>
-                <condition id="3" name="On key released" sid="7907993211592605" type="Keyboard">
-                    <param id="0" name="Key">67 (C)</param>
-                </condition>
-                <condition id="1" name="Is overlapping another object" sid="2755167733024396" type="Actor">
-                    <param id="0" name="Object">LoveNPC</param>
-                </condition>
-                <condition id="-8" name="Is boolean instance variable set" sid="8491758175705054" type="LoveNPC">
-                    <param id="0" name="Instance variable">WaitingInteraction</param>
+                    <param id="1" name="Comparison">3</param>
+                    <param id="2" name="Value">-1000</param>
                 </condition>
             </conditions>
             <actions>
-                <action id="-12" name="Subtract from" sid="3621451307679836" type="Actor">
+                <action id="-10" name="Set value" sid="7038321195133428" type="Actor">
                     <param id="0" name="Instance variable">Anger</param>
-                    <param id="1" name="Value">1000</param>
-                </action>
-                <action id="-12" name="Subtract from" sid="7836846687491697" type="Actor">
-                    <param id="0" name="Instance variable">Boredom</param>
-                    <param id="1" name="Value">1000</param>
-                </action>
-                <action id="0" name="Spawn another object" sid="3051759294987207" type="Actor">
-                    <param id="0" name="Object">Chatting</param>
-                    <param id="1" name="Layer">0</param>
-                    <param id="2" name="Image point">2</param>
-                </action>
-                <action behavior="Timer" id="0" name="Start timer" sid="1493556878226522" type="Chatting">
-                    <param id="0" name="Duration">1</param>
-                    <param id="1" name="Type">0</param>
-                    <param id="2" name="Tag">&quot;Life&quot;</param>
-                </action>
-                <action id="0" name="Set text" sid="4697184746658639" type="Chatting">
-                    <param id="0" name="Text">&quot;Que legal você&quot;</param>
-                </action>
-                <action id="-13" name="Set boolean" sid="5592381306359899" type="LoveNPC">
-                    <param id="0" name="Instance variable">WaitingInteraction</param>
-                    <param id="1" name="Value">0</param>
+                    <param id="1" name="Value">-1000</param>
                 </action>
             </actions>
         </event-block>
-        <event-block sid="1407133364018316">
+        <event-block sid="1826515267758503">
             <conditions>
-                <condition behavior="Timer" id="0" name="On timer" sid="4719615028368471" type="Chatting">
-                    <param id="0" name="Tag">&quot;Life&quot;</param>
-                </condition>
+                <condition id="-4" name="Is outside layout" sid="1804949023484496" type="cookie" />
             </conditions>
             <actions>
-                <action id="-9" name="Destroy" sid="1334584506907286" type="Chatting" />
+                <action id="-9" name="Destroy" sid="8086861826946248" type="cookie" />
             </actions>
         </event-block>
-        <event-group collapsed="1" description="" sid="6441324882011083" title="default normal">
+        <event-group description="" sid="6441324882011083" title="Default Normal">
             <sub-events>
                 <event-block sid="3809037596564084">
                     <conditions>
@@ -123,17 +75,17 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group description="" sid="1000924135542746" title="walking normal">
+        <event-group description="" sid="1000924135542746" title="Walking Normal">
             <sub-events>
                 <event-block sid="4587436122071793">
                     <conditions>
-                        <condition behavior="Platform" id="0" name="Is moving" sid="5366456846774936" type="Actor" />
-                        <condition behavior="Platform" id="2" name="Is on floor" sid="8809721074618485" type="Actor" />
                         <condition id="-7" name="Compare instance variable" sid="5889054350013718" type="Actor">
                             <param id="0" name="Instance variable">Anger</param>
                             <param id="1" name="Comparison">2</param>
                             <param id="2" name="Value">0</param>
                         </condition>
+                        <condition behavior="Platform" id="0" name="Is moving" sid="5366456846774936" type="Actor" />
+                        <condition behavior="Platform" id="2" name="Is on floor" sid="8809721074618485" type="Actor" />
                     </conditions>
                     <actions>
                         <action id="4" name="Set animation" sid="4564165415359892" type="Actor">
@@ -152,102 +104,106 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group collapsed="1" description="" sid="5896083967327853" title="jumping normal">
+        <event-group description="" sid="5896083967327853" title="Jumping Normal">
             <sub-events>
-                <event-block sid="2943247661833908">
+                <event-block sid="5514104640644861">
                     <conditions>
-                        <condition behavior="Platform" id="3" name="Is jumping" sid="4052802063346388" type="Actor" />
                         <condition id="-7" name="Compare instance variable" sid="389035921975073" type="Actor">
                             <param id="0" name="Instance variable">Anger</param>
                             <param id="1" name="Comparison">2</param>
                             <param id="2" name="Value">0</param>
                         </condition>
                     </conditions>
-                    <actions>
-                        <action id="4" name="Set animation" sid="9398997706310284" type="Actor">
-                            <param id="0" name="Animation">&quot;Jumping&quot;</param>
-                            <param id="1" name="From">1</param>
-                        </action>
-                    </actions>
-                </event-block>
-                <event-block sid="1672256087183027">
-                    <conditions>
-                        <condition behavior="Platform" id="9" name="On landed" sid="8765434858654811" type="Actor" />
-                        <condition id="-7" name="Compare instance variable" sid="2089208455160037" type="Actor">
-                            <param id="0" name="Instance variable">Anger</param>
-                            <param id="1" name="Comparison">2</param>
-                            <param id="2" name="Value">0</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="4" name="Set animation" sid="2312433148759483" type="Actor">
-                            <param id="0" name="Animation">&quot;Default&quot;</param>
-                            <param id="1" name="From">1</param>
-                        </action>
-                    </actions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="2943247661833908">
+                            <conditions>
+                                <condition behavior="Platform" id="3" name="Is jumping" sid="4052802063346388" type="Actor" />
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="9398997706310284" type="Actor">
+                                    <param id="0" name="Animation">&quot;Jumping&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="9473860370082265">
+                            <conditions>
+                                <condition behavior="Platform" id="9" name="On landed" sid="8765434858654811" type="Actor" />
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="2312433148759483" type="Actor">
+                                    <param id="0" name="Animation">&quot;Default&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group collapsed="1" description="" sid="834502333519228" title="attacking normal">
+        <event-group description="" sid="834502333519228" title="Attacking Normal">
             <sub-events>
                 <event-block sid="2454738931766687">
                     <conditions>
-                        <condition id="2" name="Key is down" sid="8362268695943015" type="Keyboard">
-                            <param id="0" name="Key">88 (X)</param>
-                        </condition>
-                        <condition behavior="Platform" id="0" inverted="1" name="Is moving" sid="7044757422646295" type="Actor" />
                         <condition id="-7" name="Compare instance variable" sid="8257980117269363" type="Actor">
                             <param id="0" name="Instance variable">Anger</param>
                             <param id="1" name="Comparison">2</param>
                             <param id="2" name="Value">0</param>
                         </condition>
                     </conditions>
-                    <actions>
-                        <action id="4" name="Set animation" sid="2514191960062197" type="Actor">
-                            <param id="0" name="Animation">&quot;Attacking&quot;</param>
-                            <param id="1" name="From">1</param>
-                        </action>
-                    </actions>
-                </event-block>
-                <event-block sid="9912525598579448">
-                    <conditions>
-                        <condition id="4" name="On finished" sid="3288368350623419" type="Actor">
-                            <param id="0" name="Animation">&quot;Attacking&quot;</param>
-                        </condition>
-                        <condition id="-7" name="Compare instance variable" sid="5550409499386538" type="Actor">
-                            <param id="0" name="Instance variable">Anger</param>
-                            <param id="1" name="Comparison">2</param>
-                            <param id="2" name="Value">0</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="0" name="Spawn another object" sid="6819412778166719" type="Actor">
-                            <param id="0" name="Object">cookie</param>
-                            <param id="1" name="Layer">1</param>
-                            <param id="2" name="Image point">1</param>
-                        </action>
-                    </actions>
+                    <actions />
                     <sub-events>
-                        <event-block sid="6889316715680777">
+                        <event-block sid="9706673226124447">
                             <conditions>
-                                <condition id="7" name="Is mirrored" sid="56388539372176" type="Actor" />
+                                <condition id="2" name="Key is down" sid="8362268695943015" type="Keyboard">
+                                    <param id="0" name="Key">88 (X)</param>
+                                </condition>
+                                <condition behavior="Platform" id="0" inverted="1" name="Is moving" sid="7044757422646295" type="Actor" />
                             </conditions>
                             <actions>
-                                <action behavior="Bullet" id="3" name="Set angle of motion" sid="2324976919442946" type="cookie">
-                                    <param id="0" name="Angle">180</param>
+                                <action id="4" name="Set animation" sid="2514191960062197" type="Actor">
+                                    <param id="0" name="Animation">&quot;Attacking&quot;</param>
+                                    <param id="1" name="From">1</param>
                                 </action>
                             </actions>
                         </event-block>
-                        <event-block sid="33524962992572">
+                        <event-block sid="1574016475745323">
                             <conditions>
-                                <condition id="-22" name="Else" sid="1480529738571875" type="System" />
-                                <condition id="7" inverted="1" name="Is mirrored" sid="3100209946281003" type="Actor" />
+                                <condition id="4" name="On finished" sid="3288368350623419" type="Actor">
+                                    <param id="0" name="Animation">&quot;Attacking&quot;</param>
+                                </condition>
                             </conditions>
                             <actions>
-                                <action behavior="Bullet" id="3" name="Set angle of motion" sid="2755130019737691" type="cookie">
-                                    <param id="0" name="Angle">0</param>
+                                <action id="0" name="Spawn another object" sid="6819412778166719" type="Actor">
+                                    <param id="0" name="Object">cookie</param>
+                                    <param id="1" name="Layer">0</param>
+                                    <param id="2" name="Image point">1</param>
                                 </action>
                             </actions>
+                            <sub-events>
+                                <event-block sid="4858844330056392">
+                                    <conditions>
+                                        <condition id="7" name="Is mirrored" sid="56388539372176" type="Actor" />
+                                    </conditions>
+                                    <actions>
+                                        <action behavior="Bullet" id="3" name="Set angle of motion" sid="2324976919442946" type="cookie">
+                                            <param id="0" name="Angle">180</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="2458409507794827">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="1480529738571875" type="System" />
+                                        <condition id="7" inverted="1" name="Is mirrored" sid="3100209946281003" type="Actor" />
+                                    </conditions>
+                                    <actions>
+                                        <action behavior="Bullet" id="3" name="Set angle of motion" sid="2755130019737691" type="cookie">
+                                            <param id="0" name="Angle">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
                         </event-block>
                     </sub-events>
                 </event-block>
@@ -269,9 +225,31 @@
                         </action>
                     </actions>
                 </event-block>
+                <event-block sid="5995128235563402">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="5632175841276247" type="cookie">
+                            <param id="0" name="Object">LoveNPC</param>
+                        </condition>
+                        <condition id="-8" name="Is boolean instance variable set" sid="5504518444750808" type="LoveNPC">
+                            <param id="0" name="Instance variable">WaitingInteraction</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-13" name="Set boolean" sid="4856053556321386" type="LoveNPC">
+                            <param id="0" name="Instance variable">WaitingInteraction</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-11" name="Add to" sid="9143629742142256" type="Actor">
+                            <param id="0" name="Instance variable">Anger</param>
+                            <param id="1" name="Value">1000</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="5524371324156538" type="LoveNPC" />
+                        <action id="-9" name="Destroy" sid="4568173538982935" type="cookie" />
+                    </actions>
+                </event-block>
             </sub-events>
         </event-group>
-        <event-group collapsed="1" description="" sid="1696036262724467" title="chatting normal">
+        <event-group description="" sid="1696036262724467" title="Chatting Normal">
             <sub-events>
                 <event-block sid="7102356617707963">
                     <conditions>
@@ -310,23 +288,58 @@
                         </action>
                     </actions>
                 </event-block>
+                <event-block sid="9569546355705985">
+                    <conditions>
+                        <condition id="3" name="On key released" sid="6046882150551213" type="Keyboard">
+                            <param id="0" name="Key">67 (C)</param>
+                        </condition>
+                        <condition id="1" name="Is overlapping another object" sid="5868933885162312" type="Actor">
+                            <param id="0" name="Object">LoveNPC</param>
+                        </condition>
+                        <condition id="-8" name="Is boolean instance variable set" sid="7298392582512928" type="LoveNPC">
+                            <param id="0" name="Instance variable">WaitingInteraction</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-12" name="Subtract from" sid="841153804387362" type="Actor">
+                            <param id="0" name="Instance variable">Anger</param>
+                            <param id="1" name="Value">1000</param>
+                        </action>
+                        <action id="-12" name="Subtract from" sid="7179121213590701" type="Actor">
+                            <param id="0" name="Instance variable">Boredom</param>
+                            <param id="1" name="Value">1000</param>
+                        </action>
+                        <action id="0" name="Spawn another object" sid="899415225746354" type="Actor">
+                            <param id="0" name="Object">Chatting</param>
+                            <param id="1" name="Layer">0</param>
+                            <param id="2" name="Image point">2</param>
+                        </action>
+                        <action behavior="Timer" id="0" name="Start timer" sid="1401802688474636" type="Chatting">
+                            <param id="0" name="Duration">1</param>
+                            <param id="1" name="Type">0</param>
+                            <param id="2" name="Tag">&quot;Life&quot;</param>
+                        </action>
+                        <action id="0" name="Set text" sid="6785144231859333" type="Chatting">
+                            <param id="0" name="Text">&quot;Que legal você&quot;</param>
+                        </action>
+                        <action id="-13" name="Set boolean" sid="7986182784556087" type="LoveNPC">
+                            <param id="0" name="Instance variable">WaitingInteraction</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="1407133364018316">
+                    <conditions>
+                        <condition behavior="Timer" id="0" name="On timer" sid="4719615028368471" type="Chatting">
+                            <param id="0" name="Tag">&quot;Life&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="1334584506907286" type="Chatting" />
+                    </actions>
+                </event-block>
             </sub-events>
         </event-group>
-        <event-block sid="9143504447020323">
-            <conditions>
-                <condition id="-7" name="Compare instance variable" sid="7764526112646306" type="Actor">
-                    <param id="0" name="Instance variable">Anger</param>
-                    <param id="1" name="Comparison">3</param>
-                    <param id="2" name="Value">-1000</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="-10" name="Set value" sid="7038321195133428" type="Actor">
-                    <param id="0" name="Instance variable">Anger</param>
-                    <param id="1" name="Value">-1000</param>
-                </action>
-            </actions>
-        </event-block>
         <event-group description="" sid="5214820561577503" title="WalkingAnger">
             <sub-events>
                 <event-block sid="9544408382890321">
@@ -356,7 +369,7 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group description="" sid="1280312278582618" title="default anger">
+        <event-group description="" sid="1280312278582618" title="Default Anger">
             <sub-events>
                 <event-block sid="3809037596564084">
                     <conditions>
@@ -385,30 +398,32 @@
                             <param id="1" name="Comparison">4</param>
                             <param id="2" name="Value">0</param>
                         </condition>
-                        <condition behavior="Platform" id="3" name="Is jumping" sid="5254770901830181" type="Actor" />
                     </conditions>
-                    <actions>
-                        <action id="4" name="Set animation" sid="8093577965944262" type="Actor">
-                            <param id="0" name="Animation">&quot;JumpingAnger&quot;</param>
-                            <param id="1" name="From">1</param>
-                        </action>
-                    </actions>
-                </event-block>
-                <event-block sid="5832505712074926">
-                    <conditions>
-                        <condition behavior="Platform" id="9" name="On landed" sid="8806072202619921" type="Actor" />
-                        <condition id="-7" name="Compare instance variable" sid="8808257492799024" type="Actor">
-                            <param id="0" name="Instance variable">Anger</param>
-                            <param id="1" name="Comparison">4</param>
-                            <param id="2" name="Value">0</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="4" name="Set animation" sid="7392340750517189" type="Actor">
-                            <param id="0" name="Animation">&quot;DefaultAnger&quot;</param>
-                            <param id="1" name="From">1</param>
-                        </action>
-                    </actions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="1689187947091716">
+                            <conditions>
+                                <condition behavior="Platform" id="3" name="Is jumping" sid="5254770901830181" type="Actor" />
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="8093577965944262" type="Actor">
+                                    <param id="0" name="Animation">&quot;JumpingAnger&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="3506139071340576">
+                            <conditions>
+                                <condition behavior="Platform" id="9" name="On landed" sid="8806072202619921" type="Actor" />
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="7392340750517189" type="Actor">
+                                    <param id="0" name="Animation">&quot;DefaultAnger&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
                 </event-block>
             </sub-events>
         </event-group>
@@ -440,13 +455,5 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-block sid="4935728623461823">
-            <conditions>
-                <condition id="-4" name="Is outside layout" sid="8264834312811242" type="cookie" />
-            </conditions>
-            <actions>
-                <action id="-9" name="Destroy" sid="6925767179162211" type="cookie" />
-            </actions>
-        </event-block>
     </events>
 </c2eventsheet>

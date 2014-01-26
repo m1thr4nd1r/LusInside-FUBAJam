@@ -2,7 +2,7 @@
 <c2layout>
     <name>Main Game</name>
     <sid>9868889551130835</sid>
-    <event-sheet>Event sheet 1</event-sheet>
+    <event-sheet>Main</event-sheet>
     <size>
         <width>1280</width>
         <height>1024</height>
@@ -315,8 +315,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>-228</x>
-                        <y>992</y>
+                        <x>1312</x>
+                        <y>92</y>
                         <z>0</z>
                         <width>25</width>
                         <height>25</height>
