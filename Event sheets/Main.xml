@@ -3,6 +3,7 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Main</name>
     <events>
+        <variable constant="0" name="DogRespawnSide" sid="1584902754791878" static="0" type="number">0</variable>
         <event-block sid="4285507118698778">
             <conditions>
                 <condition id="-1" name="Every tick" sid="7022895666495445" type="System" />
@@ -175,7 +176,7 @@
                             <actions>
                                 <action id="0" name="Spawn another object" sid="6819412778166719" type="Actor">
                                     <param id="0" name="Object">cookie</param>
-                                    <param id="1" name="Layer">1</param>
+                                    <param id="1" name="Layer">2</param>
                                     <param id="2" name="Image point">1</param>
                                 </action>
                             </actions>
@@ -249,91 +250,62 @@
         </event-group>
         <event-group description="" sid="1696036262724467" title="Chatting Normal">
             <sub-events>
-                <event-block sid="7102356617707963">
+                <event-block sid="7360892348465864">
                     <conditions>
-                        <condition behavior="Platform" id="2" name="Is on floor" sid="1552096699886631" type="Actor" />
-                        <condition id="2" name="Key is down" sid="3965083811205499" type="Keyboard">
-                            <param id="0" name="Key">67 (C)</param>
-                        </condition>
-                        <condition id="-7" name="Compare instance variable" sid="3914191668254223" type="Actor">
+                        <condition id="-7" name="Compare instance variable" sid="4335508781248989" type="Actor">
                             <param id="0" name="Instance variable">Anger</param>
                             <param id="1" name="Comparison">2</param>
                             <param id="2" name="Value">0</param>
                         </condition>
                     </conditions>
-                    <actions>
-                        <action id="4" name="Set animation" sid="1537306360991636" type="Actor">
-                            <param id="0" name="Animation">&quot;Chatting&quot;</param>
-                            <param id="1" name="From">1</param>
-                        </action>
-                    </actions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="1625582805847587">
+                            <conditions>
+                                <condition id="2" name="Key is down" sid="2975042121711645" type="Keyboard">
+                                    <param id="0" name="Key">67 (C)</param>
+                                </condition>
+                                <condition behavior="Platform" id="0" inverted="1" name="Is moving" sid="902866158212587" type="Actor" />
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="2796260636358128" type="Actor">
+                                    <param id="0" name="Animation">&quot;Chatting&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="4138364477612215">
+                            <conditions>
+                                <condition id="4" name="On finished" sid="1385719891589372" type="Actor">
+                                    <param id="0" name="Animation">&quot;Chatting&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Spawn another object" sid="5195551334268636" type="Actor">
+                                    <param id="0" name="Object">speech</param>
+                                    <param id="1" name="Layer">2</param>
+                                    <param id="2" name="Image point">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
                 </event-block>
-                <event-block sid="278162448586546">
+                <event-block sid="4077001884401937">
                     <conditions>
-                        <condition id="3" name="On key released" sid="4753499436279622" type="Keyboard">
+                        <condition id="3" name="On key released" sid="3280295993048931" type="Keyboard">
                             <param id="0" name="Key">67 (C)</param>
                         </condition>
-                        <condition id="-7" name="Compare instance variable" sid="1804806711558619" type="Actor">
+                        <condition id="-7" name="Compare instance variable" sid="6296607181205064" type="Actor">
                             <param id="0" name="Instance variable">Anger</param>
                             <param id="1" name="Comparison">2</param>
                             <param id="2" name="Value">0</param>
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="4" name="Set animation" sid="5369209316571019" type="Actor">
+                        <action id="4" name="Set animation" sid="3851173682537549" type="Actor">
                             <param id="0" name="Animation">&quot;Default&quot;</param>
                             <param id="1" name="From">1</param>
                         </action>
-                    </actions>
-                </event-block>
-                <event-block sid="9569546355705985">
-                    <conditions>
-                        <condition id="3" name="On key released" sid="6046882150551213" type="Keyboard">
-                            <param id="0" name="Key">67 (C)</param>
-                        </condition>
-                        <condition id="1" name="Is overlapping another object" sid="5868933885162312" type="Actor">
-                            <param id="0" name="Object">LoveNPC</param>
-                        </condition>
-                        <condition id="-8" name="Is boolean instance variable set" sid="7298392582512928" type="LoveNPC">
-                            <param id="0" name="Instance variable">WaitingInteraction</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="-12" name="Subtract from" sid="841153804387362" type="Actor">
-                            <param id="0" name="Instance variable">Anger</param>
-                            <param id="1" name="Value">1000</param>
-                        </action>
-                        <action id="-12" name="Subtract from" sid="7179121213590701" type="Actor">
-                            <param id="0" name="Instance variable">Boredom</param>
-                            <param id="1" name="Value">1000</param>
-                        </action>
-                        <action id="0" name="Spawn another object" sid="899415225746354" type="Actor">
-                            <param id="0" name="Object">Chatting</param>
-                            <param id="1" name="Layer">0</param>
-                            <param id="2" name="Image point">2</param>
-                        </action>
-                        <action behavior="Timer" id="0" name="Start timer" sid="1401802688474636" type="Chatting">
-                            <param id="0" name="Duration">1</param>
-                            <param id="1" name="Type">0</param>
-                            <param id="2" name="Tag">&quot;Life&quot;</param>
-                        </action>
-                        <action id="0" name="Set text" sid="6785144231859333" type="Chatting">
-                            <param id="0" name="Text">&quot;Que legal você&quot;</param>
-                        </action>
-                        <action id="-13" name="Set boolean" sid="7986182784556087" type="LoveNPC">
-                            <param id="0" name="Instance variable">WaitingInteraction</param>
-                            <param id="1" name="Value">0</param>
-                        </action>
-                    </actions>
-                </event-block>
-                <event-block sid="1407133364018316">
-                    <conditions>
-                        <condition behavior="Timer" id="0" name="On timer" sid="4719615028368471" type="Chatting">
-                            <param id="0" name="Tag">&quot;Life&quot;</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="-9" name="Destroy" sid="1334584506907286" type="Chatting" />
                     </actions>
                 </event-block>
             </sub-events>
@@ -463,7 +435,9 @@
         </event-block>
         <event-block sid="4401725983616542">
             <conditions>
-                <condition id="-4" name="Is outside layout" sid="4755567426366212" type="cookie" />
+                <condition id="4" name="On finished" sid="4755567426366212" type="cookie">
+                    <param id="0" name="Animation">&quot;Default&quot;</param>
+                </condition>
             </conditions>
             <actions>
                 <action id="-9" name="Destroy" sid="8611589881171178" type="cookie" />
@@ -471,11 +445,153 @@
         </event-block>
         <event-block sid="9297700467970052">
             <conditions>
-                <condition id="0" name="On collision with another object" sid="9278397421064331" type="Actor">
-                    <param id="0" name="Object">Sprite</param>
+                <condition id="-6" name="Every X seconds" sid="1065635974866973" type="System">
+                    <param id="0" name="Interval (seconds)">10</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="520533657935069" type="System">
+                    <param id="0" name="Variable">DogRespawnSide</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
                 </condition>
             </conditions>
-            <actions />
+            <actions>
+                <action id="-3" name="Create object" sid="4429648544907397" type="System">
+                    <param id="0" name="Object to create">Doge</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="X">0</param>
+                    <param id="3" name="Y">980</param>
+                </action>
+                <action id="-9" name="Set value" sid="2729293861439731" type="System">
+                    <param id="0" name="Variable">DogRespawnSide</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="585892268890532">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="5251523176072871" type="System">
+                    <param id="0" name="Interval (seconds)">10</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="791873321144787" type="System">
+                    <param id="0" name="Variable">DogRespawnSide</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-3" name="Create object" sid="4817389611422496" type="System">
+                    <param id="0" name="Object to create">Doge</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="X">4000</param>
+                    <param id="3" name="Y">980</param>
+                </action>
+                <action id="-9" name="Set value" sid="8180476900578044" type="System">
+                    <param id="0" name="Variable">DogRespawnSide</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="3639407812370809">
+            <conditions>
+                <condition id="-1" name="Compare X" sid="1863887585626238" type="Doge">
+                    <param id="0" name="Comparison">4</param>
+                    <param id="1" name="X co-ordinate">actor.X+50</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Platform" id="7" name="Simulate control" sid="4070204204724036" type="Doge">
+                    <param id="0" name="Control">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="8301451909132702">
+            <conditions>
+                <condition id="-1" name="Compare X" sid="8706586270148753" type="Doge">
+                    <param id="0" name="Comparison">2</param>
+                    <param id="1" name="X co-ordinate">actor.X-50</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Platform" id="7" name="Simulate control" sid="6343583351854115" type="Doge">
+                    <param id="0" name="Control">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="6591455754404593">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="8081318793540036" type="cookie">
+                    <param id="0" name="Object">Doge</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="4879099137890827" type="cookie" />
+                <action id="-9" name="Destroy" sid="3073333255828802" type="Doge" />
+                <action id="-11" name="Add to" sid="5897431713473973" type="Actor">
+                    <param id="0" name="Instance variable">Anger</param>
+                    <param id="1" name="Value">500</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="3301503151513471">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="881200801665447" type="System" />
+            </conditions>
+            <actions>
+                <action id="-11" name="Add to" sid="1060320029098044" type="Doge">
+                    <param id="0" name="Instance variable">PoopTime</param>
+                    <param id="1" name="Value">-1</param>
+                </action>
+                <action id="-11" name="Add to" sid="3842048754622143" type="Poop">
+                    <param id="0" name="Instance variable">fade</param>
+                    <param id="1" name="Value">-1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="212704108871135">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="8031744037670517" type="Doge">
+                    <param id="0" name="Instance variable">PoopTime</param>
+                    <param id="1" name="Comparison">3</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-10" name="Set value" sid="7812050119186623" type="Doge">
+                    <param id="0" name="Instance variable">PoopTime</param>
+                    <param id="1" name="Value">random(1000)+500</param>
+                </action>
+                <action id="0" name="Spawn another object" sid="5102845518647119" type="Doge">
+                    <param id="0" name="Object">Poop</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="972320713111533">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="5195951583192535" type="Poop">
+                    <param id="0" name="Instance variable">fade</param>
+                    <param id="1" name="Comparison">3</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="2569053896638681" type="Poop" />
+            </actions>
+        </event-block>
+        <event-block sid="9562593650316729">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="5904678467694041" type="Actor">
+                    <param id="0" name="Object">Poop</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="9760297739790207" type="Poop" />
+                <action id="-11" name="Add to" sid="9817809860203103" type="Actor">
+                    <param id="0" name="Instance variable">Anger</param>
+                    <param id="1" name="Value">250</param>
+                </action>
+            </actions>
         </event-block>
     </events>
 </c2eventsheet>
