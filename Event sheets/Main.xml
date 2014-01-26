@@ -3,6 +3,7 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Main</name>
     <events>
+        <variable constant="0" name="BullyRespawnSide" sid="8347941029716637" static="0" type="number">0</variable>
         <variable constant="0" name="GoodDirection" sid="2830185868740483" static="0" type="number">0</variable>
         <variable constant="0" name="DogRespawnSide" sid="1584902754791878" static="0" type="number">0</variable>
         <event-block sid="4285507118698778">
@@ -567,14 +568,14 @@
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="-10" name="Set value" sid="5570891712718534" type="Doge">
-                            <param id="0" name="Instance variable">PoopTime</param>
-                            <param id="1" name="Value">random(1000)+500</param>
-                        </action>
                         <action id="0" name="Spawn another object" sid="874825405549381" type="Doge">
                             <param id="0" name="Object">Poop</param>
                             <param id="1" name="Layer">1</param>
                             <param id="2" name="Image point">0</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="5570891712718534" type="Doge">
+                            <param id="0" name="Instance variable">PoopTime</param>
+                            <param id="1" name="Value">random(1000)+500</param>
                         </action>
                     </actions>
                 </event-block>
@@ -620,8 +621,7 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group description="" sid="8136670134473068" title="Bully" />
-        <event-group description="" sid="523201074517911" title="Good">
+        <event-group collapsed="1" description="" sid="523201074517911" title="Good">
             <sub-events>
                 <event-block sid="5847450012836304">
                     <conditions>
@@ -732,5 +732,315 @@
                 </event-block>
             </sub-events>
         </event-group>
+        <event-group collapsed="1" description="" disabled="1" sid="9781582274472341" title="Neutral">
+            <sub-events>
+                <comment>NPC&apos;s neutros ao jogador</comment>
+                <event-block disabled="1" sid="2586786598301746">
+                    <conditions>
+                        <condition id="-4" name="Is outside layout" sid="2934987286885028" type="Neutral" />
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="9919275583982989" type="Neutral" />
+                    </actions>
+                </event-block>
+                <event-block disabled="1" sid="1734060888150571">
+                    <conditions>
+                        <condition id="-6" name="Every X seconds" sid="6505731272149455" type="System">
+                            <param id="0" name="Interval (seconds)">8</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="2683424591969233" type="System">
+                            <param id="0" name="Variable">GoodDirection</param>
+                            <param id="1" name="Value">int(random(2))</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block any="1" disabled="1" sid="3154746314151343">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="9032029599477968" type="System">
+                                    <param id="0" name="Variable">GoodDirection</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Create object" sid="8800077019570076" type="System">
+                                    <param id="0" name="Object to create">Neutral</param>
+                                    <param id="1" name="Layer">2</param>
+                                    <param id="2" name="X">((Actor.X + 100) &gt; 0)? Actor.X + 100: 4000</param>
+                                    <param id="3" name="Y">980</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block any="1" disabled="1" sid="2474003125328362">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="8391251131649165" type="System">
+                                    <param id="0" name="Variable">GoodDirection</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Create object" sid="1681291981493712" type="System">
+                                    <param id="0" name="Object to create">Neutral</param>
+                                    <param id="1" name="Layer">2</param>
+                                    <param id="2" name="X">((Actor.X - 100) &lt; 0)? Actor.X - 100: 0</param>
+                                    <param id="3" name="Y">980</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block disabled="1" sid="8655310784738647">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="4317374661660447" type="Actor">
+                                    <param id="0" name="Instance variable">Anger</param>
+                                    <param id="1" name="Comparison">3</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block disabled="1" sid="4003861024911765">
+                                    <conditions>
+                                        <condition id="-11" name="For Each" sid="1436917965294802" type="System">
+                                            <param id="0" name="Object">Neutral</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action behavior="Bullet" id="3" name="Set angle of motion" sid="3771058192608664" type="Neutral">
+                                            <param id="0" name="Angle">Actor.Angle</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block disabled="1" sid="8236944258302657">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="1405644477054965" type="System" />
+                                <condition id="-7" name="Compare instance variable" sid="6561590188202752" type="Actor">
+                                    <param id="0" name="Instance variable">Anger</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block disabled="1" sid="2671987549504891">
+                                    <conditions>
+                                        <condition id="-11" name="For Each" sid="9581981032948449" type="System">
+                                            <param id="0" name="Object">Neutral</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action behavior="Bullet" id="3" name="Set angle of motion" sid="2715262894691878" type="Neutral">
+                                            <param id="0" name="Angle">(int(Actor.Angle / 180)) * 180</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block disabled="1" sid="6069899937425167">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="8995629313714045" type="Neutral">
+                            <param id="0" name="Object">speech</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="1161037458732039" type="Actor">
+                            <param id="0" name="Instance variable">Anger</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="587457995774863" type="Neutral" />
+                        <action id="-11" name="Add to" sid="4650585826325151" type="Actor">
+                            <param id="0" name="Instance variable">Anger</param>
+                            <param id="1" name="Value">-200</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block disabled="1" sid="4125970405536095">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="7429677544296149" type="Neutral">
+                            <param id="0" name="Object">speech</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="4190675568670647" type="Actor">
+                            <param id="0" name="Instance variable">Anger</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="7953417245229617" type="Neutral" />
+                        <action id="-11" name="Add to" sid="2044849842775581" type="Actor">
+                            <param id="0" name="Instance variable">Anger</param>
+                            <param id="1" name="Value">-100</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="5690017358034676" title="Bully">
+            <sub-events>
+                <event-block sid="9297700467970052">
+                    <conditions>
+                        <condition id="-6" name="Every X seconds" sid="1065635974866973" type="System">
+                            <param id="0" name="Interval (seconds)">10</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="520533657935069" type="System">
+                            <param id="0" name="Variable">DogRespawnSide</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="4429648544907397" type="System">
+                            <param id="0" name="Object to create">Bully</param>
+                            <param id="1" name="Layer">1</param>
+                            <param id="2" name="X">0</param>
+                            <param id="3" name="Y">980</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="2729293861439731" type="System">
+                            <param id="0" name="Variable">BullyRespawnSide</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="585892268890532">
+                    <conditions>
+                        <condition id="-6" name="Every X seconds" sid="5251523176072871" type="System">
+                            <param id="0" name="Interval (seconds)">10</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="791873321144787" type="System">
+                            <param id="0" name="Variable">DogRespawnSide</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="4817389611422496" type="System">
+                            <param id="0" name="Object to create">Bully</param>
+                            <param id="1" name="Layer">1</param>
+                            <param id="2" name="X">4000</param>
+                            <param id="3" name="Y">980</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="8180476900578044" type="System">
+                            <param id="0" name="Variable">BullyRespawnSide</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="4112044564546383">
+                    <conditions>
+                        <condition id="-1" name="Compare X" sid="2427792127078301" type="Bully">
+                            <param id="0" name="Comparison">4</param>
+                            <param id="1" name="X co-ordinate">Actor.X</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Platform" id="7" name="Simulate control" sid="4955471344077602" type="Bully">
+                            <param id="0" name="Control">0</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="7372509858032955">
+                            <conditions>
+                                <condition id="0" name="On collision with another object" sid="6561558987089823" type="Bully">
+                                    <param id="0" name="Object">Actor</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Platform" id="7" name="Simulate control" sid="827802902605126" type="Actor">
+                                    <param id="0" name="Control">0</param>
+                                </action>
+                                <action behavior="Platform" id="7" name="Simulate control" sid="6278435749741171" type="Actor">
+                                    <param id="0" name="Control">2</param>
+                                </action>
+                                <action id="-11" name="Add to" sid="3596953106901186" type="Actor">
+                                    <param id="0" name="Instance variable">Anger</param>
+                                    <param id="1" name="Value">150</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="6466868268972258">
+                    <conditions>
+                        <condition id="-1" name="Compare X" sid="6458033035244768" type="Bully">
+                            <param id="0" name="Comparison">2</param>
+                            <param id="1" name="X co-ordinate">actor.X</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Platform" id="7" name="Simulate control" sid="5482795827811738" type="Bully">
+                            <param id="0" name="Control">1</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="461667758896059">
+                            <conditions>
+                                <condition id="0" name="On collision with another object" sid="997446000326329" type="Bully">
+                                    <param id="0" name="Object">Actor</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-11" name="Add to" sid="9393480246477078" type="Actor">
+                                    <param id="0" name="Instance variable">Anger</param>
+                                    <param id="1" name="Value">150</param>
+                                </action>
+                                <action behavior="Platform" id="7" name="Simulate control" sid="3979404660068687" type="Actor">
+                                    <param id="0" name="Control">0</param>
+                                </action>
+                                <action behavior="Platform" id="7" name="Simulate control" sid="3245817280165633" type="Actor">
+                                    <param id="0" name="Control">2</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="253557862541132">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="7536532561719228" type="cookie">
+                            <param id="0" name="Object">Bully</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="2302483539789377" type="cookie" />
+                        <action id="-11" name="Add to" sid="5307801207149849" type="Bully">
+                            <param id="0" name="Instance variable">life</param>
+                            <param id="1" name="Value">-1</param>
+                        </action>
+                        <action id="-11" name="Add to" sid="308118714930871" type="Actor">
+                            <param id="0" name="Instance variable">Anger</param>
+                            <param id="1" name="Value">100</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="7872800144266595">
+                    <conditions>
+                        <condition id="-4" name="Is outside layout" sid="8576277579917772" type="Bully" />
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="8218082735831654" type="Bully" />
+                    </actions>
+                </event-block>
+                <event-block sid="7631571841744136">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="6700063963784901" type="Bully">
+                            <param id="0" name="Instance variable">life</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="8" name="Set flipped" sid="9404747877418664" type="Bully">
+                            <param id="0" name="State">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+>>>>>>> ef3c6feac91374ba2309a749fd3e0db467476ee0
     </events>
 </c2eventsheet>
