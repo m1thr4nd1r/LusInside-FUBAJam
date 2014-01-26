@@ -145,7 +145,7 @@
         </event-group>
         <event-group collapsed="1" description="" sid="834502333519228" title="Attacking Normal">
             <sub-events>
-                <event-block sid="2454738931766687">
+                <event-block collapsed="1" sid="2454738931766687">
                     <conditions>
                         <condition id="-7" name="Compare instance variable" sid="8257980117269363" type="Actor">
                             <param id="0" name="Instance variable">Anger</param>
@@ -191,6 +191,9 @@
                                         <action behavior="Bullet" id="3" name="Set angle of motion" sid="2324976919442946" type="cookie">
                                             <param id="0" name="Angle">180</param>
                                         </action>
+                                        <action id="8" name="Set flipped" sid="3077109059439077" type="cookie">
+                                            <param id="0" name="State">0</param>
+                                        </action>
                                     </actions>
                                 </event-block>
                                 <event-block sid="2458409507794827">
@@ -201,6 +204,9 @@
                                     <actions>
                                         <action behavior="Bullet" id="3" name="Set angle of motion" sid="2755130019737691" type="cookie">
                                             <param id="0" name="Angle">0</param>
+                                        </action>
+                                        <action id="8" name="Set flipped" sid="7654653465809842" type="cookie">
+                                            <param id="0" name="State">1</param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -226,31 +232,9 @@
                         </action>
                     </actions>
                 </event-block>
-                <event-block sid="5995128235563402">
-                    <conditions>
-                        <condition id="1" name="Is overlapping another object" sid="5632175841276247" type="cookie">
-                            <param id="0" name="Object">LoveNPC</param>
-                        </condition>
-                        <condition id="-8" name="Is boolean instance variable set" sid="5504518444750808" type="LoveNPC">
-                            <param id="0" name="Instance variable">WaitingInteraction</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="-11" name="Add to" sid="9143629742142256" type="Actor">
-                            <param id="0" name="Instance variable">Anger</param>
-                            <param id="1" name="Value">1000</param>
-                        </action>
-                        <action id="-13" name="Set boolean" sid="4856053556321386" type="LoveNPC">
-                            <param id="0" name="Instance variable">WaitingInteraction</param>
-                            <param id="1" name="Value">0</param>
-                        </action>
-                        <action id="-9" name="Destroy" sid="5524371324156538" type="LoveNPC" />
-                        <action id="-9" name="Destroy" sid="4568173538982935" type="cookie" />
-                    </actions>
-                </event-block>
             </sub-events>
         </event-group>
-        <event-group collapsed="1" description="" sid="1696036262724467" title="Chatting Normal">
+        <event-group description="" sid="1696036262724467" title="Chatting Normal">
             <sub-events>
                 <event-block sid="7360892348465864">
                     <conditions>
@@ -291,7 +275,7 @@
                                 <action id="0" name="Spawn another object" sid="118398635681563" type="Actor">
                                     <param id="0" name="Object">Text</param>
                                     <param id="1" name="Layer">2</param>
-                                    <param id="2" name="Image point">2</param>
+                                    <param id="2" name="Image point">1</param>
                                 </action>
                                 <action id="0" name="Set text" sid="7596910042180855" type="Text">
                                     <param id="0" name="Text">&quot;Oi, tudo bem?&quot;</param>
@@ -314,6 +298,32 @@
                     <actions>
                         <action id="4" name="Set animation" sid="3851173682537549" type="Actor">
                             <param id="0" name="Animation">&quot;Default&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group collapsed="1" description="" sid="3631685037031072" title="Default Anger">
+            <sub-events>
+                <event-block sid="3809037596564084">
+                    <conditions>
+                        <condition behavior="Platform" id="0" inverted="1" name="Is moving" sid="6318902982778951" type="Actor" />
+                        <condition id="-7" name="Compare instance variable" sid="2635416894344315" type="Actor">
+                            <param id="0" name="Instance variable">Anger</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                        <condition id="2" inverted="1" name="Key is down" sid="6178796343584389" type="Keyboard">
+                            <param id="0" name="Key">88 (X)</param>
+                        </condition>
+                        <condition id="2" inverted="1" name="Key is down" sid="7051467866357567" type="Keyboard">
+                            <param id="0" name="Key">67 (C)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="1348894318899479" type="Actor">
+                            <param id="0" name="Animation">&quot;DefaultAnger&quot;</param>
                             <param id="1" name="From">1</param>
                         </action>
                     </actions>
@@ -349,19 +359,160 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group collapsed="1" description="" sid="1280312278582618" title="Default Anger">
+        <event-group description="" sid="3079480000718798" title="Chatting Anger">
             <sub-events>
-                <event-block sid="3809037596564084">
+                <event-block sid="7360892348465864">
                     <conditions>
-                        <condition behavior="Platform" id="0" inverted="1" name="Is moving" sid="6318902982778951" type="Actor" />
-                        <condition id="-7" name="Compare instance variable" sid="2635416894344315" type="Actor">
+                        <condition id="-7" name="Compare instance variable" sid="4335508781248989" type="Actor">
+                            <param id="0" name="Instance variable">Anger</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="1625582805847587">
+                            <conditions>
+                                <condition id="2" name="Key is down" sid="2975042121711645" type="Keyboard">
+                                    <param id="0" name="Key">67 (C)</param>
+                                </condition>
+                                <condition behavior="Platform" id="0" inverted="1" name="Is moving" sid="902866158212587" type="Actor" />
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="2796260636358128" type="Actor">
+                                    <param id="0" name="Animation">&quot;ChattingAnger&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="4138364477612215">
+                            <conditions>
+                                <condition id="4" name="On finished" sid="1385719891589372" type="Actor">
+                                    <param id="0" name="Animation">&quot;ChattingAnger&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Spawn another object" sid="5195551334268636" type="Actor">
+                                    <param id="0" name="Object">speech</param>
+                                    <param id="1" name="Layer">2</param>
+                                    <param id="2" name="Image point">0</param>
+                                </action>
+                                <action id="0" name="Spawn another object" sid="118398635681563" type="Actor">
+                                    <param id="0" name="Object">Text</param>
+                                    <param id="1" name="Layer">2</param>
+                                    <param id="2" name="Image point">2</param>
+                                </action>
+                                <action id="0" name="Set text" sid="7596910042180855" type="Text">
+                                    <param id="0" name="Text">&quot;Aff, que droga...&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="4077001884401937">
+                    <conditions>
+                        <condition id="3" name="On key released" sid="3280295993048931" type="Keyboard">
+                            <param id="0" name="Key">67 (C)</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="6296607181205064" type="Actor">
                             <param id="0" name="Instance variable">Anger</param>
                             <param id="1" name="Comparison">4</param>
                             <param id="2" name="Value">0</param>
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="4" name="Set animation" sid="1348894318899479" type="Actor">
+                        <action id="4" name="Set animation" sid="3851173682537549" type="Actor">
+                            <param id="0" name="Animation">&quot;DefaultAnger&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group collapsed="1" description="" sid="1492182380957216" title="Attacking Anger">
+            <sub-events>
+                <event-block collapsed="1" sid="2454738931766687">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="8257980117269363" type="Actor">
+                            <param id="0" name="Instance variable">Anger</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="9706673226124447">
+                            <conditions>
+                                <condition id="2" name="Key is down" sid="8362268695943015" type="Keyboard">
+                                    <param id="0" name="Key">88 (X)</param>
+                                </condition>
+                                <condition behavior="Platform" id="0" inverted="1" name="Is moving" sid="7044757422646295" type="Actor" />
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="2514191960062197" type="Actor">
+                                    <param id="0" name="Animation">&quot;AttackingAnger&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="1574016475745323">
+                            <conditions>
+                                <condition id="4" name="On finished" sid="3288368350623419" type="Actor">
+                                    <param id="0" name="Animation">&quot;AttackingAnger&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Spawn another object" sid="6819412778166719" type="Actor">
+                                    <param id="0" name="Object">Stone</param>
+                                    <param id="1" name="Layer">2</param>
+                                    <param id="2" name="Image point">1</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="4858844330056392">
+                                    <conditions>
+                                        <condition id="7" name="Is mirrored" sid="56388539372176" type="Actor" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="-18" name="Rotate clockwise" sid="2324976919442946" type="Stone">
+                                            <param id="0" name="Degrees">180</param>
+                                        </action>
+                                        <action id="8" name="Set flipped" sid="2687882342585028" type="Stone">
+                                            <param id="0" name="State">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="2458409507794827">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="1480529738571875" type="System" />
+                                        <condition id="7" inverted="1" name="Is mirrored" sid="3100209946281003" type="Actor" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="-18" name="Rotate clockwise" sid="2755130019737691" type="Stone">
+                                            <param id="0" name="Degrees">0</param>
+                                        </action>
+                                        <action id="8" name="Set flipped" sid="269370013686748" type="Stone">
+                                            <param id="0" name="State">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="6773239338776027">
+                    <conditions>
+                        <condition id="3" name="On key released" sid="6521828764409962" type="Keyboard">
+                            <param id="0" name="Key">88 (X)</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="9081675176380993" type="Actor">
+                            <param id="0" name="Instance variable">Anger</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="570866934844421" type="Actor">
                             <param id="0" name="Animation">&quot;DefaultAnger&quot;</param>
                             <param id="1" name="From">1</param>
                         </action>
@@ -435,14 +586,6 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-block sid="9407700809731457">
-            <conditions>
-                <condition id="-4" name="Is outside layout" sid="3922704057855868" type="Actor" />
-            </conditions>
-            <actions>
-                <action id="-9" name="Destroy" sid="8291694271718904" type="Actor" />
-            </actions>
-        </event-block>
         <event-block sid="4401725983616542">
             <conditions>
                 <condition id="4" name="On finished" sid="4755567426366212" type="cookie">
@@ -453,12 +596,22 @@
                 <action id="-9" name="Destroy" sid="8611589881171178" type="cookie" />
             </actions>
         </event-block>
+        <event-block sid="3419155009121953">
+            <conditions>
+                <condition id="4" name="On finished" sid="4042753149880689" type="Stone">
+                    <param id="0" name="Animation">&quot;Default&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="2026986889762892" type="Stone" />
+            </actions>
+        </event-block>
         <event-group collapsed="1" description="" sid="8026903565640887" title="Doge">
             <sub-events>
                 <event-block sid="9297700467970052">
                     <conditions>
                         <condition id="-6" name="Every X seconds" sid="1065635974866973" type="System">
-                            <param id="0" name="Interval (seconds)">10</param>
+                            <param id="0" name="Interval (seconds)">20</param>
                         </condition>
                         <condition id="-14" name="Compare variable" sid="520533657935069" type="System">
                             <param id="0" name="Variable">DogRespawnSide</param>
@@ -482,7 +635,7 @@
                 <event-block sid="585892268890532">
                     <conditions>
                         <condition id="-6" name="Every X seconds" sid="5251523176072871" type="System">
-                            <param id="0" name="Interval (seconds)">10</param>
+                            <param id="0" name="Interval (seconds)">20</param>
                         </condition>
                         <condition id="-14" name="Compare variable" sid="791873321144787" type="System">
                             <param id="0" name="Variable">DogRespawnSide</param>
@@ -544,9 +697,26 @@
                         </action>
                     </actions>
                 </event-block>
+                <event-block sid="2773478424568552">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="4938773738840607" type="Stone">
+                            <param id="0" name="Object">Doge</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="9577149674189467" type="Stone" />
+                        <action id="-9" name="Destroy" sid="8805013348216436" type="Doge" />
+                        <action id="-11" name="Add to" sid="6194246743344785" type="Actor">
+                            <param id="0" name="Instance variable">Anger</param>
+                            <param id="1" name="Value">500</param>
+                        </action>
+                    </actions>
+                </event-block>
                 <event-block sid="8358524927950588">
                     <conditions>
-                        <condition id="-1" name="Every tick" sid="4827742038574671" type="System" />
+                        <condition id="-6" name="Every X seconds" sid="4827742038574671" type="System">
+                            <param id="0" name="Interval (seconds)">1.0</param>
+                        </condition>
                     </conditions>
                     <actions>
                         <action id="-11" name="Add to" sid="6909031606643583" type="Doge">
@@ -635,7 +805,7 @@
                 <event-block sid="4440526756981229">
                     <conditions>
                         <condition id="-6" name="Every X seconds" sid="1047897733492471" type="System">
-                            <param id="0" name="Interval (seconds)">8</param>
+                            <param id="0" name="Interval (seconds)">10</param>
                         </condition>
                     </conditions>
                     <actions>
@@ -882,7 +1052,7 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group description="" sid="5690017358034676" title="Bully">
+        <event-group collapsed="1" description="" sid="5690017358034676" title="Bully">
             <sub-events>
                 <event-block sid="9297700467970052">
                     <conditions>
@@ -890,7 +1060,7 @@
                             <param id="0" name="Interval (seconds)">10</param>
                         </condition>
                         <condition id="-14" name="Compare variable" sid="520533657935069" type="System">
-                            <param id="0" name="Variable">DogRespawnSide</param>
+                            <param id="0" name="Variable">BullyRespawnSide</param>
                             <param id="1" name="Comparison">0</param>
                             <param id="2" name="Value">0</param>
                         </condition>
@@ -898,9 +1068,9 @@
                     <actions>
                         <action id="-3" name="Create object" sid="4429648544907397" type="System">
                             <param id="0" name="Object to create">Bully</param>
-                            <param id="1" name="Layer">1</param>
-                            <param id="2" name="X">0</param>
-                            <param id="3" name="Y">980</param>
+                            <param id="1" name="Layer">2</param>
+                            <param id="2" name="X">10</param>
+                            <param id="3" name="Y">970</param>
                         </action>
                         <action id="-9" name="Set value" sid="2729293861439731" type="System">
                             <param id="0" name="Variable">BullyRespawnSide</param>
@@ -914,7 +1084,7 @@
                             <param id="0" name="Interval (seconds)">10</param>
                         </condition>
                         <condition id="-14" name="Compare variable" sid="791873321144787" type="System">
-                            <param id="0" name="Variable">DogRespawnSide</param>
+                            <param id="0" name="Variable">BullyRespawnSide</param>
                             <param id="1" name="Comparison">0</param>
                             <param id="2" name="Value">1</param>
                         </condition>
@@ -922,13 +1092,30 @@
                     <actions>
                         <action id="-3" name="Create object" sid="4817389611422496" type="System">
                             <param id="0" name="Object to create">Bully</param>
-                            <param id="1" name="Layer">1</param>
-                            <param id="2" name="X">4000</param>
-                            <param id="3" name="Y">980</param>
+                            <param id="1" name="Layer">2</param>
+                            <param id="2" name="X">3990</param>
+                            <param id="3" name="Y">970</param>
                         </action>
                         <action id="-9" name="Set value" sid="8180476900578044" type="System">
                             <param id="0" name="Variable">BullyRespawnSide</param>
                             <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="3587777610096681">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="1475460451932076" type="Bully">
+                            <param id="0" name="Object">Actor</param>
+                        </condition>
+                        <condition id="-2" name="Compare Y" sid="2864290799004132" type="Actor">
+                            <param id="0" name="Comparison">2</param>
+                            <param id="1" name="Y co-ordinate">Bully.Y-20</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="7405309810950994" type="Bully" />
+                        <action behavior="Platform" id="9" name="Set vector Y" sid="4100151835645153" type="Actor">
+                            <param id="0" name="Vector Y">Actor.Y-20</param>
                         </action>
                     </actions>
                 </event-block>
@@ -943,6 +1130,9 @@
                         <action behavior="Platform" id="7" name="Simulate control" sid="4955471344077602" type="Bully">
                             <param id="0" name="Control">0</param>
                         </action>
+                        <action id="7" name="Set mirrored" sid="4106752369673836" type="Bully">
+                            <param id="0" name="State">0</param>
+                        </action>
                     </actions>
                     <sub-events>
                         <event-block sid="7372509858032955">
@@ -952,13 +1142,11 @@
                                 </condition>
                             </conditions>
                             <actions>
-                                <action behavior="Platform" id="7" name="Simulate control" sid="827802902605126" type="Actor">
-                                    <param id="0" name="Control">0</param>
+                                <action id="2" name="Stop" sid="3118558394576797" type="Actor" />
+                                <action id="-1" name="Set X" sid="5305140404472907" type="Actor">
+                                    <param id="0" name="X">actor.X-50</param>
                                 </action>
-                                <action behavior="Platform" id="7" name="Simulate control" sid="6278435749741171" type="Actor">
-                                    <param id="0" name="Control">2</param>
-                                </action>
-                                <action id="-11" name="Add to" sid="3596953106901186" type="Actor">
+                                <action id="-11" name="Add to" sid="4398984539097748" type="Actor">
                                     <param id="0" name="Instance variable">Anger</param>
                                     <param id="1" name="Value">150</param>
                                 </action>
@@ -977,6 +1165,9 @@
                         <action behavior="Platform" id="7" name="Simulate control" sid="5482795827811738" type="Bully">
                             <param id="0" name="Control">1</param>
                         </action>
+                        <action id="7" name="Set mirrored" sid="9777495728341065" type="Bully">
+                            <param id="0" name="State">1</param>
+                        </action>
                     </actions>
                     <sub-events>
                         <event-block sid="461667758896059">
@@ -990,11 +1181,9 @@
                                     <param id="0" name="Instance variable">Anger</param>
                                     <param id="1" name="Value">150</param>
                                 </action>
-                                <action behavior="Platform" id="7" name="Simulate control" sid="3979404660068687" type="Actor">
-                                    <param id="0" name="Control">0</param>
-                                </action>
-                                <action behavior="Platform" id="7" name="Simulate control" sid="3245817280165633" type="Actor">
-                                    <param id="0" name="Control">2</param>
+                                <action id="2" name="Stop" sid="3918549175544973" type="Actor" />
+                                <action id="-1" name="Set X" sid="7117179206705775" type="Actor">
+                                    <param id="0" name="X">actor.X+50</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -1018,12 +1207,22 @@
                         </action>
                     </actions>
                 </event-block>
-                <event-block sid="7872800144266595">
+                <event-block sid="494969939542547">
                     <conditions>
-                        <condition id="-4" name="Is outside layout" sid="8576277579917772" type="Bully" />
+                        <condition id="0" name="On collision with another object" sid="9244117218435402" type="Stone">
+                            <param id="0" name="Object">Bully</param>
+                        </condition>
                     </conditions>
                     <actions>
-                        <action id="-9" name="Destroy" sid="8218082735831654" type="Bully" />
+                        <action id="-9" name="Destroy" sid="7489704819644272" type="Stone" />
+                        <action id="-11" name="Add to" sid="9715732224332988" type="Bully">
+                            <param id="0" name="Instance variable">life</param>
+                            <param id="1" name="Value">-2</param>
+                        </action>
+                        <action id="-11" name="Add to" sid="8030330851708704" type="Actor">
+                            <param id="0" name="Instance variable">Anger</param>
+                            <param id="1" name="Value">100</param>
+                        </action>
                     </actions>
                 </event-block>
                 <event-block sid="7631571841744136">
@@ -1035,9 +1234,7 @@
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="8" name="Set flipped" sid="9404747877418664" type="Bully">
-                            <param id="0" name="State">0</param>
-                        </action>
+                        <action id="-9" name="Destroy" sid="9404747877418664" type="Bully" />
                     </actions>
                 </event-block>
             </sub-events>
