@@ -37,7 +37,7 @@
         <height>480</height>
     </window-size>
     <pixel-rounding>0</pixel-rounding>
-    <first-layout>Main Game</first-layout>
+    <first-layout>Menu</first-layout>
     <use-loader-layout>1</use-loader-layout>
     <configuration-settings>
         <prop name="Clear background">Yes</prop>
@@ -1301,6 +1301,7 @@
         <file name="pulo.m4a" />
         <file name="pulo.ogg" />
         <file name="pulo.wav" />
+        <file name="fart.ogg" />
     </sounds-folder>
     <music-folder expanded="1">
         <file name="biscoito.m4a" />

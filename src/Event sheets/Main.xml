@@ -106,9 +106,9 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group collapsed="1" description="" sid="5896083967327853" title="Jumping Normal">
+        <event-group description="" sid="5896083967327853" title="Jumping Normal">
             <sub-events>
-                <event-block collapsed="1" sid="5514104640644861">
+                <event-block sid="5514104640644861">
                     <conditions>
                         <condition id="-7" name="Compare instance variable" sid="389035921975073" type="Actor">
                             <param id="0" name="Instance variable">Anger</param>
@@ -561,7 +561,7 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group collapsed="1" description="" sid="6137471746492435" title="Jumping Anger">
+        <event-group description="" sid="6137471746492435" title="Jumping Anger">
             <sub-events>
                 <event-block sid="6443836906405993">
                     <conditions>
@@ -573,6 +573,22 @@
                     </conditions>
                     <actions />
                     <sub-events>
+                        <event-block sid="1127565398927244">
+                            <conditions>
+                                <condition id="0" name="On key pressed" sid="2649670886319896" type="Keyboard">
+                                    <param id="0" name="Key">38 (Up arrow)</param>
+                                </condition>
+                                <condition behavior="Platform" id="2" name="Is on floor" sid="4409917429547647" type="Actor" />
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Play" sid="7587401262570994" type="Audio">
+                                    <param id="0" name="Audio file">pulo - rapido</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">0</param>
+                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
                         <event-block sid="1689187947091716">
                             <conditions>
                                 <condition behavior="Platform" id="3" name="Is jumping" sid="5254770901830181" type="Actor" />
@@ -581,12 +597,6 @@
                                 <action id="4" name="Set animation" sid="8093577965944262" type="Actor">
                                     <param id="0" name="Animation">&quot;JumpingAnger&quot;</param>
                                     <param id="1" name="From">1</param>
-                                </action>
-                                <action id="0" name="Play" sid="5329324525700197" type="Audio">
-                                    <param id="0" name="Audio file">pulo</param>
-                                    <param id="2" name="Loop">0</param>
-                                    <param id="3" name="Volume">0</param>
-                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -770,7 +780,7 @@
                 <event-block sid="9297700467970052">
                     <conditions>
                         <condition id="-6" name="Every X seconds" sid="1065635974866973" type="System">
-                            <param id="0" name="Interval (seconds)">10</param>
+                            <param id="0" name="Interval (seconds)">5</param>
                         </condition>
                         <condition id="-14" name="Compare variable" sid="520533657935069" type="System">
                             <param id="0" name="Variable">BullyRespawnSide</param>
@@ -794,7 +804,7 @@
                 <event-block sid="585892268890532">
                     <conditions>
                         <condition id="-6" name="Every X seconds" sid="5251523176072871" type="System">
-                            <param id="0" name="Interval (seconds)">10</param>
+                            <param id="0" name="Interval (seconds)">5</param>
                         </condition>
                         <condition id="-14" name="Compare variable" sid="791873321144787" type="System">
                             <param id="0" name="Variable">BullyRespawnSide</param>
@@ -1058,8 +1068,8 @@
             <conditions>
                 <condition id="-7" name="Compare instance variable" sid="1479557030705007" type="Actor">
                     <param id="0" name="Instance variable">Anger</param>
-                    <param id="1" name="Comparison">5</param>
-                    <param id="2" name="Value">5000</param>
+                    <param id="1" name="Comparison">4</param>
+                    <param id="2" name="Value">0</param>
                 </condition>
                 <condition id="-1" name="Compare X" sid="3008496219760245" type="Actor">
                     <param id="0" name="Comparison">5</param>
@@ -1107,6 +1117,41 @@
                 </action>
                 <action id="7" name="Set mirrored" sid="9078809872684879" type="Sprite19">
                     <param id="0" name="State">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="4513863757194597">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="4334455241518701" type="System">
+                    <param id="0" name="Interval (seconds)">2.0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-3" name="Create object" sid="7723547158925893" type="System">
+                    <param id="0" name="Object to create">Sprite20</param>
+                    <param id="1" name="Layer">2</param>
+                    <param id="2" name="X">Sprite19.x</param>
+                    <param id="3" name="Y">Sprite19.y</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="7408209740896967">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="5653442373857178" type="Actor">
+                    <param id="0" name="Object">Sprite20</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="676048652979668" type="Sprite20" />
+                <action id="-11" name="Add to" sid="8855983158839387" type="Actor">
+                    <param id="0" name="Instance variable">Anger</param>
+                    <param id="1" name="Value">300</param>
+                </action>
+                <action id="0" name="Play" sid="2152675947293291" type="Audio">
+                    <param id="0" name="Audio file">fart</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
                 </action>
             </actions>
         </event-block>
